@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>aliyun-spirng-boot</artifactId>
+        <groupId>com.alibaba.cloud</groupId>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>aliyun-spring-boot-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Aliyun Spring Boot :: Dependencies</name>
+    <description>Spring Boot Dependencies for Alibaba Cloud</description>
+
+    <properties>
+        <aliyun.sdk.version>4.5.0</aliyun.sdk.version>
+        <alicloud.context.version>1.0.5</alicloud.context.version>
+        <aliyun.sdk.edas.version>2.44.0</aliyun.sdk.edas.version>
+        <schedulerX.client.version>2.1.6</schedulerX.client.version>
+        <aliyun.java.sdk.dysmsapi>1.1.0</aliyun.java.sdk.dysmsapi>
+        <aliyun.sdk.mns>1.1.8.6</aliyun.sdk.mns>
+        <aliyun.java.sdk.dyvmsapi>1.1.1</aliyun.java.sdk.dyvmsapi>
+        <aliyun.java.sdk.r-kvstore.version>2.1.5</aliyun.java.sdk.r-kvstore.version>
+        <spring.context.support.version>1.0.6</spring.context.support.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Aliyun dependencies -->
+
+            <!-- Aliyun SDK -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.sdk.version}</version>
+            </dependency>
+
+            <!-- Aliyun SchedulerX -->
+            <dependency>
+                <groupId>com.alibaba.edas</groupId>
+                <artifactId>schedulerX-client</artifactId>
+                <version>${schedulerX.client.version}</version>
+            </dependency>
+
+            <!-- Aliyun SMS -->
+            <dependency>
+                <groupId>com.aliyun.mns</groupId>
+                <artifactId>aliyun-sdk-mns</artifactId>
+                <version>${aliyun.sdk.mns}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-dysmsapi</artifactId>
+                <version>${aliyun.java.sdk.dysmsapi}</version>
+            </dependency>
+
+            <!-- Aliyun Redis -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-r-kvstore</artifactId>
+                <version>${aliyun.java.sdk.r-kvstore.version}</version>
+            </dependency>
+
+            <!-- Aliyun OSS dependencies -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${oss.version}</version>
+            </dependency>
+
+            <!-- Starters dependencies -->
+
+        </dependencies>
+    </dependencyManagement>
+
+</project>
