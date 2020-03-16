@@ -18,4 +18,11 @@
     <name>Aliyun Spring Boot :: Starters</name>
     <description>Spring Boot Starters for Aliyun Services</description>
 
+    <modules>
+        <module>aliyun-context-spring-boot-starter</module>
+        <module>aliyun-oss-spring-boot-starter</module>
+        <module>aliyun-schedulerx-spring-boot-starter</module>
+        <module>aliyun-sms-spring-boot-starter</module>
+        <module>aliyun-redis-spring-boot-starter</module>
+    </modules>
 </project>

@@ -24,7 +24,7 @@
         <java.target.version>1.8</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
 
         <!-- Maven Plugin Versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -173,7 +173,6 @@
             </build>
         </profile>
 
-
         <profile>
             <!-- Spring Boot 2.0 -->
             <id>spring-boot-2.0</id>
@@ -186,7 +185,7 @@
             <!-- Spring Boot 2.1 -->
             <id>spring-boot-2.1</id>
             <properties>
-                <spring-boot.version>2.1.11.RELEASE</spring-boot.version>
+                <spring-boot.version>2.1.14.RELEASE</spring-boot.version>
             </properties>
         </profile>
 
@@ -240,6 +239,7 @@
                     <source>${java.source.version}</source>
                     <target>${java.target.version}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                    <parameters>true</parameters>
                 </configuration>
             </plugin>
 

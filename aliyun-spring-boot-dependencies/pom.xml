@@ -6,8 +6,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>aliyun-spirng-boot</artifactId>
         <groupId>com.alibaba.cloud</groupId>
+        <artifactId>aliyun-spirng-boot</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -19,19 +19,32 @@
     <description>Spring Boot Dependencies for Alibaba Cloud</description>
 
     <properties>
+        <spring.context.support.version>1.0.6</spring.context.support.version>
+
+        <!-- Aliyun dependencies' versions -->
+
         <aliyun.sdk.version>4.5.0</aliyun.sdk.version>
         <alicloud.context.version>1.0.5</alicloud.context.version>
+        <aliyun.oss.version>3.1.0</aliyun.oss.version>
         <aliyun.sdk.edas.version>2.44.0</aliyun.sdk.edas.version>
-        <schedulerX.client.version>2.1.6</schedulerX.client.version>
+        <aliyun.schedulerx.client.version>2.1.6</aliyun.schedulerx.client.version>
+        <aliyun.sdk.mns.version>1.1.8.6</aliyun.sdk.mns.version>
         <aliyun.java.sdk.dysmsapi>1.1.0</aliyun.java.sdk.dysmsapi>
-        <aliyun.sdk.mns>1.1.8.6</aliyun.sdk.mns>
-        <aliyun.java.sdk.dyvmsapi>1.1.1</aliyun.java.sdk.dyvmsapi>
-        <aliyun.java.sdk.r-kvstore.version>2.1.5</aliyun.java.sdk.r-kvstore.version>
-        <spring.context.support.version>1.0.6</spring.context.support.version>
+        <aliyun.r-kvstore.version>2.1.5</aliyun.r-kvstore.version>
+        <alicloud-context.version>1.0.5</alicloud-context.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- Alibaba depenencies -->
+
+            <!-- Alibaba Spring Context Support -->
+            <dependency>
+                <groupId>com.alibaba.spring</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.context.support.version}</version>
+            </dependency>
 
             <!-- Aliyun dependencies -->
 
@@ -42,18 +55,36 @@
                 <version>${aliyun.sdk.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>alicloud-context</artifactId>
+                <version>${alicloud-context.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-edas</artifactId>
+                <version>${aliyun.sdk.edas.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.aliyun</groupId>
+                        <artifactId>aliyun-java-sdk-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
             <!-- Aliyun SchedulerX -->
             <dependency>
                 <groupId>com.alibaba.edas</groupId>
                 <artifactId>schedulerX-client</artifactId>
-                <version>${schedulerX.client.version}</version>
+                <version>${aliyun.schedulerx.client.version}</version>
             </dependency>
 
             <!-- Aliyun SMS -->
             <dependency>
                 <groupId>com.aliyun.mns</groupId>
                 <artifactId>aliyun-sdk-mns</artifactId>
-                <version>${aliyun.sdk.mns}</version>
+                <version>${aliyun.sdk.mns.version}</version>
             </dependency>
 
             <dependency>
@@ -66,17 +97,28 @@
             <dependency>
                 <groupId>com.aliyun</groupId>
                 <artifactId>aliyun-java-sdk-r-kvstore</artifactId>
-                <version>${aliyun.java.sdk.r-kvstore.version}</version>
+                <version>${aliyun.r-kvstore.version}</version>
             </dependency>
 
             <!-- Aliyun OSS dependencies -->
             <dependency>
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
-                <version>${oss.version}</version>
+                <version>${aliyun.oss.version}</version>
             </dependency>
 
             <!-- Starters dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-context-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
