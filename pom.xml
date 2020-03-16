@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>aliyun-spirng-boot</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+
+    <name>Aliyun Spring Boot</name>
+    <description>Spring Boot for Aliyun Services</description>
+    <url>https://github.com/alibaba/aliyun-spirng-boot</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/alibaba/aliyun-spirng-boot</url>
+        <connection>scm:git:git:////github.com/alibaba/aliyun-spirng-boot.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/alibaba/aliyun-spirng-boot.git
+        </developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/alibaba/aliyun-spirng-boot/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <name>xiaojing</name>
+            <email>flystar32@163.com</email>
+        </developer>
+        <developer>
+            <name>Jim Fang</name>
+            <email>fangjian0423@gmail.com</email>
+            <organization>Alibaba</organization>
+            <url>https://github.com/fangjian0423</url>
+        </developer>
+        <developer>
+            <name>xiaolongzuo</name>
+            <email>150349407@qq.com</email>
+        </developer>
+        <developer>
+            <name>hengyunabc</name>
+            <email>hengyunabc@gmail.com</email>
+        </developer>
+        <developer>
+            <id>mercyblitz</id>
+            <name>Mercy Ma</name>
+            <email>mercyblitz@gmail.com</email>
+            <organization>Alibaba</organization>
+            <url>https://github.com/mercyblitz</url>
+        </developer>
+        <developer>
+            <name>yunzheng</name>
+            <email>yunzheng1228@gmail.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>aliyun-spring-boot-dependencies</module>
+        <module>aliyun-spring-boot-parent</module>
+        <module>aliyun-spring-boot-starters</module>
+        <module>aliyun-spring-boot-docs</module>
+        <module>aliyun-spring-boot-examples</module>
+    </modules>
+
+    <properties>
+        <revision>1.0.0-SNAPSHOT</revision>
+    </properties>
+
+
+</project>
