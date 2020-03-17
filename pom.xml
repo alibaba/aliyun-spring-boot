@@ -70,7 +70,7 @@
         <module>aliyun-spring-boot-parent</module>
         <module>aliyun-spring-boot-starters</module>
         <module>aliyun-spring-boot-docs</module>
-        <module>aliyun-spring-boot-examples</module>
+        <module>aliyun-spring-boot-samples</module>
     </modules>
 
     <properties>
