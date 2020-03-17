@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.spring.boot.examples.oss;
+package com.alibaba.cloud.spring.boot.examples.sms;
 
 import com.aliyun.oss.OSS;
 import com.aliyun.oss.common.utils.IOUtils;
