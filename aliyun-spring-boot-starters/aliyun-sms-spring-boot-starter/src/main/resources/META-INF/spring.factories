@@ -1,3 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.alibaba.alicloud.sms.config.SmsAutoConfiguration,\
-  com.alibaba.alicloud.sms.endpoint.SmsEndpointAutoConfiguration
+com.alibaba.cloud.spring.boot.sms.autoconfigure.SmsAutoConfiguration,\
+com.alibaba.cloud.spring.boot.sms.autoconfigure.SmsContextAutoConfiguration,\
+com.alibaba.cloud.spring.boot.sms.actuate.autoconfigure.SmsEndpointAutoConfiguration

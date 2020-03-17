@@ -29,6 +29,7 @@
 
     <modules>
         <module>aliyun-oss-spring-boot-sample</module>
+        <module>aliyun-sms-spring-boot-sample</module>
     </modules>
 
     <build>
