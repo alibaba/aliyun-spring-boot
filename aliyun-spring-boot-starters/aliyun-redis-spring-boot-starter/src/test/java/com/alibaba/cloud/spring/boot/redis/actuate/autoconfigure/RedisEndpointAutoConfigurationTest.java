@@ -31,7 +31,7 @@ import static org.junit.Assert.assertNotNull;
  * The test cases for {@link RedisEndpointAutoConfiguration}
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @Ignore
 @RunWith(SpringRunner.class)

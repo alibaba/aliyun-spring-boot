@@ -29,7 +29,7 @@ import org.springframework.lang.Nullable;
  * "https://help.aliyun.com/document_detail/120580.html">DescribeAvailableResource</a>
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @Endpoint(id = "redisDescribeAvailableResource")
 public class RedisDescribeAvailableResourceEndpoint extends AbstractRedisEndpoint {
