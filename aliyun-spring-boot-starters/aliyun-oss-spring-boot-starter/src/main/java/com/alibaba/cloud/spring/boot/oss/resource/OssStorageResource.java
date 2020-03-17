@@ -41,6 +41,7 @@ import java.net.URL;
 import java.util.concurrent.ExecutorService;
 
 import static com.alibaba.cloud.spring.boot.oss.OssConstants.OSS_TASK_EXECUTOR_BEAN_NAME;
+import static org.springframework.util.StringUtils.trimAllWhitespace;
 
 
 /**
@@ -88,7 +89,7 @@ public class OssStorageResource implements WritableResource {
         this.autoCreateFiles = autoCreateFiles;
         this.beanFactory = beanFactory;
         try {
-            URI locationUri = new URI(location);
+            URI locationUri = new URI(trimAllWhitespace(location));
             this.bucketName = locationUri.getAuthority();
 
             if (locationUri.getPath() != null && locationUri.getPath().length() > 1) {
