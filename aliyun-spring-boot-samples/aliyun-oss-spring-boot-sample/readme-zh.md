@@ -15,21 +15,21 @@
 
 1. 修改 pom.xml 文件，引入 aliyun-oss-spring-boot-starter。	
 
-        ```xml
-	    <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>aliyun-oss-spring-boot-starter</artifactId>
-        </dependency>
-	    ```
+```xml
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+</dependency>
+```
 	    
 2. 在配置文件中配置 OSS 服务对应的 accessKey、secretKey 和 endpoint。
 
-        ```properties
-		// application.properties
-		alibaba.cloud.access-key=your-ak
-		alibaba.cloud.secret-key=your-sk
-		alibaba.cloud.oss.endpoint=***
-	    ```
+```properties
+// application.properties
+alibaba.cloud.access-key=your-ak
+alibaba.cloud.secret-key=your-sk
+alibaba.cloud.oss.endpoint=***
+```
 	    
     以阿里云 accessKey、secretKey 为例，获取方式如下。
 

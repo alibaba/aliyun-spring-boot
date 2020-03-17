@@ -16,21 +16,21 @@ Before we start the demo, let's learn how to connect OSS to a Spring Boot applic
 
 1. Add dependency aliyun-oss-spring-boot-starter in the pom.xml file in your Spring Boot project.
 
-        ```xml
-	    <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>aliyun-oss-spring-boot-starter</artifactId>
-        </dependency>
-        ```
+```xml
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+</dependency>
+```
         
 2. Configure accessKeyId, secretAccessKey and region in application.properties.
         
-        ```properties
-		// application.properties
-		alibaba.cloud.access-key=your-ak
-		alibaba.cloud.secret-key=your-sk
-		alibaba.cloud.oss.endpoint=***
-	    ```
+```properties
+// application.properties
+alibaba.cloud.access-key=your-ak
+alibaba.cloud.secret-key=your-sk
+alibaba.cloud.oss.endpoint=***
+```
 	    
     To get accessKey, secretKey, follow these steps:
 
