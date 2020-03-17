@@ -32,17 +32,17 @@ alibaba.cloud.secret-key=your-sk
 alibaba.cloud.oss.endpoint=***
 ```
 	    
-    To get accessKey, secretKey, follow these steps:
+To get accessKey, secretKey, follow these steps:
 
-    1. On the Alibaba Cloud console, click your avatar on the upper-right corner and click accesskeys. Or visit [User Management](https://usercenter.console.aliyun.com/) page directly：
-		  
-       ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535464041257-5c7ae997-daff-45b3-89d4-02d578da4ac7.png) 
+1. On the Alibaba Cloud console, click your avatar on the upper-right corner and click accesskeys. Or visit [User Management](https://usercenter.console.aliyun.com/) page directly：
+      
+   ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535464041257-5c7ae997-daff-45b3-89d4-02d578da4ac7.png) 
 
-    2. Get your accessKey、secretKey：
+2. Get your accessKey、secretKey：
 
-       ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535464098793-517491f6-156b-4a98-a5a4-6113cb3c01a4.png) 
-	
-	 **Note:** If you are using [STS](https://www.alibabacloud.com/help/doc-detail/28756.html), you should configure securityToken in addition to accessKey, secretKey, and endpoint.
+   ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535464098793-517491f6-156b-4a98-a5a4-6113cb3c01a4.png) 
+
+**Note:** If you are using [STS](https://www.alibabacloud.com/help/doc-detail/28756.html), you should configure securityToken in addition to accessKey, secretKey, and endpoint.
 	 
 3. Inject OSSClient and use it to upload files to the OSS server and download a file from OSS server.
 

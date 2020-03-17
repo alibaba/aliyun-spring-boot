@@ -31,17 +31,17 @@ alibaba.cloud.secret-key=your-sk
 alibaba.cloud.oss.endpoint=***
 ```
 	    
-    以阿里云 accessKey、secretKey 为例，获取方式如下。
+以阿里云 accessKey、secretKey 为例，获取方式如下。
 
-    i. 在阿里云控制台界面，单击右上角头像，选择 accesskeys，或者直接登录[用户信息管理界面](https://usercenter.console.aliyun.com/)：
-		  
-      ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535371973274-3ebec90a-ebde-4eb7-96ed-5372f6b32fe0.png) 
+i. 在阿里云控制台界面，单击右上角头像，选择 accesskeys，或者直接登录[用户信息管理界面](https://usercenter.console.aliyun.com/)：
+      
+  ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535371973274-3ebec90a-ebde-4eb7-96ed-5372f6b32fe0.png) 
 
-    ii. 获取 accessKey、secretKey：
+ii. 获取 accessKey、secretKey：
 
-      ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535372168883-b94a3d77-3f81-4938-b409-611945a9e21c.png) 
+  ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535372168883-b94a3d77-3f81-4938-b409-611945a9e21c.png) 
  
-   **注意：**如果您使用了阿里云 [STS服务](https://help.aliyun.com/document_detail/28756.html) 进行短期访问权限管理，则除了 accessKey、secretKey、endpoint 以外，还需配置 securityToken。
+**注意：**如果您使用了阿里云 [STS服务](https://help.aliyun.com/document_detail/28756.html) 进行短期访问权限管理，则除了 accessKey、secretKey、endpoint 以外，还需配置 securityToken。
 	
 3. 注入 OSSClient 并进行文件上传下载等操作。
 
