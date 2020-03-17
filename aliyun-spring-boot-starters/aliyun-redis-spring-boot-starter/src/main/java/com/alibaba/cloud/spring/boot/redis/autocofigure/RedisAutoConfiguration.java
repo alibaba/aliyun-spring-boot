@@ -24,7 +24,7 @@ import org.springframework.context.annotation.Configuration;
  * The Auto-Configuration class for Alibaba Cloud Redis
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @EnableConfigurationProperties(RedisProperties.class)
 @Configuration(proxyBeanMethods = false)

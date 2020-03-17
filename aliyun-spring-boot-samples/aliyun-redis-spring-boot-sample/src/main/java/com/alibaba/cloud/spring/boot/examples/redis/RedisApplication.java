@@ -14,26 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.alibaba.cloud.spring.boot.redis.test;
+package com.alibaba.cloud.spring.boot.examples.redis;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * A Spring Boot bootstrap for Alibaba Cloud Redis
- * 
- * @since 2.2.1
+ * The bootstrap for Aliyun Redis Spring Boot
+ *
+ * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  */
-@EnableAutoConfiguration
-public class AliCloudRedisBootstrap {
+@SpringBootApplication
+public class RedisApplication {
 
-	public static void main(String[] args) {
-		new SpringApplicationBuilder(AliCloudRedisBootstrap.class)
-				.properties(
-						"management.endpoint.redisDescribeAvailableResource.enabled=true",
-						"spring.jmx.enabled=true",
-						"management.endpoints.web.exposure.include=*",
-						"management.endpoints.jmx.exposure.include=*")
-				.run(args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(RedisApplication.class, args);
+    }
 }

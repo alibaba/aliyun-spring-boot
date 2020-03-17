@@ -25,7 +25,7 @@ import static com.alibaba.cloud.spring.boot.redis.env.RedisProperties.PROPERTY_P
  * The {@link ConfigurationProperties} for Alibaba Cloud Redis
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @ConfigurationProperties(PROPERTY_PREFIX)
 public class RedisProperties {

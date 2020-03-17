@@ -30,7 +30,7 @@ import static com.aliyuncs.profile.DefaultProfile.getProfile;
  * The abstract implementation for Alibaba Cloud Redis
  * 
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 public abstract class AbstractRedisEndpoint {
 
