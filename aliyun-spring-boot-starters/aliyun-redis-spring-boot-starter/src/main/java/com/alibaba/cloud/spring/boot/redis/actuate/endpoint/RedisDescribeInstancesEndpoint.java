@@ -28,7 +28,7 @@ import org.springframework.boot.actuate.endpoint.annotation.Selector;
  * <a href= "https://help.aliyun.com/document_detail/60933.html">DescribeInstances</a>
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @Endpoint(id = "redisDescribeInstances")
 public class RedisDescribeInstancesEndpoint extends AbstractRedisEndpoint {

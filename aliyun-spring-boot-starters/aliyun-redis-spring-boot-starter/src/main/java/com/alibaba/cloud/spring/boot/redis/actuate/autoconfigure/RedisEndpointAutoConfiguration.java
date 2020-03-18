@@ -40,7 +40,7 @@ import static com.alibaba.cloud.spring.boot.redis.env.RedisProperties.INSTANCE_I
  * The endpoint Auto-Configuration for Alibaba Cloud Redis
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
- * @since 2.2.1
+ * @since 1.0.0
  */
 @ConditionalOnClass(name = "org.springframework.boot.actuate.endpoint.annotation.Endpoint")
 @ConditionalOnProperty(name = "alibaba.cloud.redis.enabled", havingValue = "true", matchIfMissing = true)
