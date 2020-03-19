@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.alibaba.cloud</groupId>
-    <artifactId>aliyun-spirng-boot</artifactId>
+    <artifactId>aliyun-spring-boot</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>Aliyun Spring Boot</name>
     <description>Spring Boot for Aliyun Services</description>
-    <url>https://github.com/alibaba/aliyun-spirng-boot</url>
+    <url>https://github.com/alibaba/aliyun-spring-boot</url>
 
     <licenses>
         <license>
@@ -22,15 +22,15 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/alibaba/aliyun-spirng-boot</url>
-        <connection>scm:git:git:////github.com/alibaba/aliyun-spirng-boot.git</connection>
-        <developerConnection>scm:git:ssh://git@//github.com/alibaba/aliyun-spirng-boot.git
+        <url>https://github.com/alibaba/aliyun-spring-boot</url>
+        <connection>scm:git:git:////github.com/alibaba/aliyun-spring-boot.git</connection>
+        <developerConnection>scm:git:ssh://git@//github.com/alibaba/aliyun-spring-boot.git
         </developerConnection>
     </scm>
 
     <issueManagement>
         <system>Github</system>
-        <url>https://github.com/alibaba/aliyun-spirng-boot/issues</url>
+        <url>https://github.com/alibaba/aliyun-spring-boot/issues</url>
     </issueManagement>
 
     <developers>
