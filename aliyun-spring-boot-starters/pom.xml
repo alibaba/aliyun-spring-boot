@@ -24,5 +24,6 @@
         <module>aliyun-schedulerx-spring-boot-starter</module>
         <module>aliyun-sms-spring-boot-starter</module>
         <module>aliyun-redis-spring-boot-starter</module>
+        <module>aliyun-rds-spring-boot-starter</module>
     </modules>
 </project>

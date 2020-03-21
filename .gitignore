@@ -2,6 +2,7 @@
 *.class
 *.classpath
 *.factorypath
+.flattened-pom.xml
 
 # Log file
 *.log

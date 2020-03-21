@@ -31,6 +31,7 @@
         <aliyun.sdk.mns.version>1.1.8.6</aliyun.sdk.mns.version>
         <aliyun.java.sdk.dysmsapi>1.1.0</aliyun.java.sdk.dysmsapi>
         <aliyun.r-kvstore.version>2.1.5</aliyun.r-kvstore.version>
+        <aliyun.sdk.rds.version>2.4.4</aliyun.sdk.rds.version>
         <alicloud-context.version>1.0.5</alicloud-context.version>
     </properties>
 
@@ -107,6 +108,13 @@
                 <version>${aliyun.oss.version}</version>
             </dependency>
 
+            <!-- Aliyun RDS dependeicies -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-rds</artifactId>
+                <version>${aliyun.sdk.rds.version}</version>
+            </dependency>
+
             <!-- Starters dependencies -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -117,6 +125,11 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-rds-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
