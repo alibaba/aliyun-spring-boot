@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.alibaba.cloud</groupId>
-        <artifactId>aliyun-spirng-boot</artifactId>
+        <artifactId>aliyun-spring-boot</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
