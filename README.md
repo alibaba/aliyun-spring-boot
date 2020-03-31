@@ -8,31 +8,6 @@ Application in Alibaba Cloud services.
 See the [中文文档](README-zh.md) for Chinese readme.
 
 
-
-
-## Starters
-
-- **[Alibaba Cloud OSS](https://www.aliyun.com/product/oss)**: An encrypted and secure cloud storage service which stores, processes and accesses massive amounts of data from anywhere in the world.
-
-- **[Alibaba Cloud SMS](https://www.aliyun.com/product/sms)**: A messaging service that covers the globe, Alibaba SMS provides convenient, efficient, and intelligent communication capabilities that help businesses quickly contact their customers.
-
-- **[Alibaba Cloud SchedulerX](https://www.aliyun.com/product/SchedulerX)**: accurate, highly reliable, and highly available scheduled job scheduling services with response time within seconds.
-
-- **[Alibaba Cloud Redis](https://www.aliyun.com/product/kvstore)**: A key value database service that offers in-memory caching and high-speed access to applications hosted on the cloud.
-
-- **[Alibaba Cloud RDS MySQL](https://www.aliyun.com/product/rds/mysql)**: A fully hosted online database service that supports MySQL 5.5, 5.6, 5.7, and 8.0.
-
-
-
-
-## How to build
-
-Spring Boot uses Maven for most build-related activities, and you should be able to get off the ground quite quickly by cloning the project you are interested in and typing:
-
-```shell script
-./mvnw install
-```
-
 ## How to Use
 
 ### Add maven dependency 
@@ -56,21 +31,44 @@ These artifacts are available from Maven Central via BOM:
 add the module in  `dependencies`.
 
 
-## Samples
 
-A `aliyun-spring-boot-samples` module is included in our project for you to get started with Aliyun Spring Boot quickly. 
-It contains an example, and you can refer to the readme file in the samples project for a quick walkthrough.
+## Components
 
-Samples：
+- **[Alibaba Cloud OSS](https://www.aliyun.com/product/oss)**: An encrypted and secure cloud storage service which stores, processes and accesses massive amounts of data from anywhere in the world.
+    - Starter - [aliyun-oss-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-oss-spring-boot-starter)
+    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-oss-spring-boot-sample)
 
-- **[Alibaba Cloud OSS Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-oss-spring-boot-sample)**
-- **[Alibaba Cloud SMS Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-sms-spring-boot-sample)**
-- **[Alibaba Cloud Redis Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-redis-spring-boot-sample)**
+- **[Alibaba Cloud SMS](https://www.aliyun.com/product/sms)**: A messaging service that covers the globe, Alibaba SMS provides convenient, efficient, and intelligent communication capabilities that help businesses quickly contact their customers.
+    - Starter - [aliyun-sms-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-sms-spring-boot-starter)
+    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-sms-spring-boot-sample)
+
+- **[Alibaba Cloud SchedulerX](https://www.aliyun.com/product/SchedulerX)**: accurate, highly reliable, and highly available scheduled job scheduling services with response time within seconds.
+    - Starter - [aliyun-schedulerx-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-schedulerx-spring-boot-starter)
+    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-schedulerx-spring-boot-sample)
+
+- **[Alibaba Cloud Redis](https://www.aliyun.com/product/kvstore)**: A key value database service that offers in-memory caching and high-speed access to applications hosted on the cloud.
+   - Starter - [aliyun-redis-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-redis-spring-boot-starter)
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-redis-spring-boot-sample)
+
+- **[Alibaba Cloud RDS MySQL](https://www.aliyun.com/product/rds/mysql)**: A fully hosted online database service that supports MySQL 5.5, 5.6, 5.7, and 8.0.
+   - Starter - [aliyun-redis-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-redis-spring-boot-starter)
+
 
 
 ## Version
 
 Current project only supports Spring Boot 2 and above, does not support Spring Boot 1.x at all.
+
+
+
+## How to build
+
+Spring Boot uses Maven for most build-related activities, and you should be able to get off the ground quite quickly by cloning the project you are interested in and typing:
+
+```shell script
+./mvnw install
+```
+
 
 
 ## Contact Us
