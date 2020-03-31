@@ -51,7 +51,7 @@
 
 - **[Alibaba Cloud RDS MySQL](https://www.aliyun.com/product/rds/mysql)**: 阿里云关系型数据库RDS（Relational Database Service）是一种稳定可靠、可弹性伸缩的在线数据库服务，提供容灾、备份、恢复、迁移等方面的全套解决方案，彻底解决数据库运维的烦恼。
    - Starter - [aliyun-redis-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-redis-spring-boot-starter)
-
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-rds-spring-boot-sample)
 
 
 ## Version
