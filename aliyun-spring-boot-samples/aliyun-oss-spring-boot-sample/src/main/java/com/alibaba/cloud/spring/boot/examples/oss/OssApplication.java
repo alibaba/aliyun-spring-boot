@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.spring.boot.examples.sms;
+package com.alibaba.cloud.spring.boot.examples.oss;
 
 import com.aliyun.oss.OSS;
 import org.springframework.beans.factory.annotation.Autowired;
