@@ -14,12 +14,12 @@
 
 **注意：本节只是为了便于您理解接入方式，本示例代码中已经完成接入工作，您只需修改 accessKey、secretKey 即可。**
 
-1. 修改 pom.xml 文件，引入 spring-cloud-starter-alicloud-sms。
+1. 修改 pom.xml 文件，引入 aliyun-sms-spring-boot-starter。
 	
 ```xml
 <dependency>
     <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-starter-alicloud-sms</artifactId>
+    <artifactId>aliyun-sms-spring-boot-starter</artifactId>
 </dependency>
 ```
 	

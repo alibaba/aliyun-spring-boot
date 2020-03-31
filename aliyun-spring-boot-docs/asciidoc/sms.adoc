@@ -6,13 +6,13 @@ Spring Cloud Alibaba Cloud SMS provide an easier-to-use API for quick access to 
 
 === How to Introduce Spring Cloud Alibaba Cloud SMS
 
-If you want to use SMS in your project, please use the starter with the group ID as `com.alibaba.cloud` and the artifact ID as `spring-cloud-starter-alicloud-sms`.
+If you want to use SMS in your project, please use the starter with the group ID as `com.alibaba.cloud` and the artifact ID as `aliyun-sms-spring-boot-starter`.
 
 [source,xml]
 ----
 <dependency>
     <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-starter-alicloud-sms</artifactId>
+    <artifactId>aliyun-sms-spring-boot-starter</artifactId>
 </dependency>
 ----
 

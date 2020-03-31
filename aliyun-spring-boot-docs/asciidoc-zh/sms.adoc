@@ -4,13 +4,13 @@
 
 === 如何引入 Spring Cloud AliCloud SMS
 
-如果要在您的项目中引入 SMS，使用 group ID 为 `com.alibaba.cloud` 和 artifact ID 为 `spring-cloud-starter-alicloud-sms` 的 starter。
+如果要在您的项目中引入 SMS，使用 group ID 为 `com.alibaba.cloud` 和 artifact ID 为 `aliyun-sms-spring-boot-starter` 的 starter。
 
 [source,xml]
 ----
 <dependency>
     <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-starter-alicloud-sms</artifactId>
+    <artifactId>aliyun-sms-spring-boot-starter</artifactId>
 </dependency>
 ----
 
