@@ -17,11 +17,10 @@
 package com.alibaba.cloud.spring.boot.rds.actuate.autoconfigure;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.health.ConditionalOnEnabledHealthIndicator;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,9 +41,8 @@ import com.aliyuncs.profile.DefaultProfile;
  */
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(RdsProperties.class)
-@ConditionalOnWebApplication
 @ConditionalOnClass(Endpoint.class)
-@ConditionalOnProperty(RDSConstants.ENABLE_ACTUATOR)
+@ConditionalOnEnabledHealthIndicator(RDSConstants.MODULE_NAME)
 public class RdsEndpointAutoConfiguration {
 
     @Autowired

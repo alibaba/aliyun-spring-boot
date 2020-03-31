@@ -24,6 +24,11 @@ package com.alibaba.cloud.spring.boot.rds.env;
 public final class RDSConstants {
 
     /**
+     * The name of module.
+     */
+    public static final String MODULE_NAME = "rds";
+
+    /**
      * Prefix of RDSConfigurationProperties.
      */
     public static final String PROPERTY_PREFIX = "alibaba.cloud.rds";
@@ -38,10 +43,6 @@ public final class RDSConstants {
      */
     public static final String ACTUATOR_PREFIX = PROPERTY_PREFIX + ".actuator";
 
-    /**
-     * Enable RDS actuator.
-     */
-    public static final String ENABLE_ACTUATOR = ACTUATOR_PREFIX + ".enable";
 
     private RDSConstants() {
         throw new AssertionError("Must not instantiate constant utility class");
