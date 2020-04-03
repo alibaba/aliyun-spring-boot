@@ -72,6 +72,7 @@ Spring Boot uses Maven for most build-related activities, and you should be able
 
 
 ## Contact Us
-Mailing list is recommended for discussing almost anything related to `aliyun-spring-boot`. 
 
-aliyun-spring-boot@googlegroups.com:You can ask questions here if you encounter any problem when using or developing aliyun-spring-boot.
+DingDing Chat group is recommended for discussing almost anything related to `aliyun-spring-boot`. 
+
+![DingQR](https://img.alicdn.com/tfs/TB1jXikzAL0gK0jSZFtXXXQCXXa-1002-323.png)
