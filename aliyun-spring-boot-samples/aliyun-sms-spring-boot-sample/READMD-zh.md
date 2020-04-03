@@ -299,10 +299,7 @@ Spring Boot 应用支持通过 Endpoint 来暴露相关信息，SMS Starter 也�
 
 在 maven 中添加 `spring-boot-starter-actuator`依赖，并在配置中允许 Endpoints 的访问。
 
-- Spring Boot1.x 中添加配置 `management.security.enabled=false`
 - Spring Boot2.x 中添加配置 `management.endpoints.web.exposure.include=*`
-
-Spring Boot1.x 可以通过访问 http://127.0.0.1:18084/sms-info 来查看 SMS Endpoint 的信息。
 
 Spring Boot2.x 可以通过访问 http://127.0.0.1:18084/actuator/sms-info 来访问。
 

@@ -6,9 +6,9 @@
 
     <parent>
         <groupId>com.alibaba.cloud</groupId>
-        <artifactId>aliyun-spring-boot</artifactId>
+        <artifactId>aliyun-spring-boot-parent</artifactId>
         <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../aliyun-spring-boot-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>aliyun-spring-boot-docs</artifactId>
@@ -17,4 +17,16 @@
     <name>Aliyun Spring Boot :: Docs</name>
     <description>Spring Boot Documents for Aliyun Services</description>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
