@@ -76,7 +76,7 @@ To get accessKey, secretKey, follow these steps:
 	    1. Execute command `mvn clean package` to build a fatjar.
 	    2. Run command `java -jar oss-example.jar` to start the application.
 
-After startup, a bucket called 'spring-cloud-alibaba-test' is automatically created in OSS.
+After startup, a bucket called 'aliyun-spring-boot-test' is automatically created in OSS.
 
 ### Upload or download files
 
@@ -108,11 +108,11 @@ Results：
 ### Verify results on OSS
 
 You can verify results on the OSS console when you finish uploading or downloading files.
-1. Log on to the [OSS console](https://oss.console.aliyun.com/)，and you will find a bucket named `spring-cloud-alibaba-test`.
+1. Log on to the [OSS console](https://oss.console.aliyun.com/)，and you will find a bucket named `aliyun-spring-boot-test`.
 
    ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535464204462-ccebb9e0-7233-499c-8dec-8b8348231b2b.png) 
 
-2. Click the `spring-cloud-alibaba-test` bucket, select the Files tab, and you will find the oss-test.json file. The objectName of the file is 'oss-test.json'. File directory and file is separated by '/'. 
+2. Click the `aliyun-spring-boot-test` bucket, select the Files tab, and you will find the oss-test.json file. The objectName of the file is 'oss-test.json'. File directory and file is separated by '/'. 
 
    ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535618026281-613a338c-f89c-4c7b-8b04-d404d1320699.png) 
     	
@@ -142,7 +142,7 @@ Endpoint will show the configurations and the list of buckets of all OSSClients.
 
 OSS Starter supports getting file objects by `Spring Resource`. Simply configure OSS protocol of the resource：
 
-	  @Value("oss://spring-cloud-alibaba/oss-test")
+	  @Value("oss://aliyun-spring-boot/oss-test")
 	  private Resource file;
 
 	  // read file content

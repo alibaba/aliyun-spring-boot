@@ -76,7 +76,7 @@ ii. 获取 accessKey、secretKey：
 	  1. 执行 `mvn clean package` 将工程编译打包；
 	  2. 执行 `java -jar oss-example.jar`启动应用。
 	  
-应用启动后会自动在 OSS 上创建一个名为 `spring-cloud-alibaba-test` 的 Bucket。	 
+应用启动后会自动在 OSS 上创建一个名为 `aliyun-spring-boot-test` 的 Bucket。	 
 
 ### 上传或下载文件
 
@@ -110,11 +110,11 @@ ii. 获取 accessKey、secretKey：
 
 完成文件上传或者下载操作后，可以登录 OSS 控制台进行验证。
 
-1. 登陆[OSS控制台](https://oss.console.aliyun.com/)，可以看到左侧 Bucket 列表新增一个名字为`spring-cloud-alibaba-test`的 Bucket。
+1. 登陆[OSS控制台](https://oss.console.aliyun.com/)，可以看到左侧 Bucket 列表新增一个名字为`aliyun-spring-boot-test`的 Bucket。
 
    ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535369224513-387afdf9-6078-4a42-9f18-d9fe9926a9cd.png) 
 
-2. 单击`spring-cloud-alibaba-test` Bucket，选择 `文件管理` 页签，发现上传的 oss-test 文件。上传的 objectName 为`oss-test.json`。目录和文件以'/'符号分割。
+2. 单击`aliyun-spring-boot-test` Bucket，选择 `文件管理` 页签，发现上传的 oss-test 文件。上传的 objectName 为`oss-test.json`。目录和文件以'/'符号分割。
 
    ![undefined](https://cdn.nlark.com/lark/0/2018/png/64647/1535615378605-df1381e9-c5ff-4da1-b3b3-ce9acfef313f.png) 
     	
@@ -146,7 +146,7 @@ OSS Starter 支持以 Resource 的形式得到文件对象。如果只需读取�
 
 只需配置 OSS 协议对应的 Resource 即可：
 
-	  @Value("oss://spring-cloud-alibaba/oss-test")
+	  @Value("oss://aliyun-spring-boot/oss-test")
 	  private Resource file;
 	  
 	  // 文件内容的读取
