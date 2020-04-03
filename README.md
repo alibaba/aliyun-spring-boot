@@ -30,6 +30,24 @@ These artifacts are available from Maven Central via BOM:
 
 add the module in  `dependencies`.
 
+If you'd like to use the SNAPSHOT artifacts, please add the following `<repository>` into `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>sonatype-snapshots</id>
+        <name>Sonatype Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </repository>
+</repositories>
+```
+
 
 
 ## Components
