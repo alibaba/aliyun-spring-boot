@@ -29,6 +29,23 @@
 
 然后在 `dependencies` 中添加自己所需使用的依赖即可使用。
 
+如果您想使用 SNAPSHOT 版本的话，请添加以下 `<repository>` 到 `pom.xml` 文件：
+
+```xml
+<repositories>
+    <repository>
+        <id>sonatype-snapshots</id>
+        <name>Sonatype Snapshots</name>
+        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </repository>
+</repositories>
+```
 
 
 ## 组件
