@@ -1,10 +1,10 @@
 == Spring Cloud AliCloud RDS
 
-°¢ÀïÔÆ¹ØÏµĞÍÊı¾İ¿âRDS£¨Relational Database Service£©ÊÇÒ»ÖÖÎÈ¶¨¿É¿¿¡¢¿Éµ¯ĞÔÉìËõµÄÔÚÏßÊı¾İ¿â·şÎñ£¬Ìá¹©ÈİÔÖ¡¢±¸·İ¡¢»Ö¸´¡¢Ç¨ÒÆµÈ·½ÃæµÄÈ«Ì×½â¾ö·½°¸£¬³¹µ×½â¾öÊı¾İ¿âÔËÎ¬µÄ·³ÄÕ¡£
+é˜¿é‡Œäº‘å…³ç³»å‹æ•°æ®åº“RDSï¼ˆRelational Database Serviceï¼‰æ˜¯ä¸€ç§ç¨³å®šå¯é ã€å¯å¼¹æ€§ä¼¸ç¼©çš„åœ¨çº¿æ•°æ®åº“æœåŠ¡ï¼Œæä¾›å®¹ç¾ã€å¤‡ä»½ã€æ¢å¤ã€è¿ç§»ç­‰æ–¹é¢çš„å…¨å¥—è§£å†³æ–¹æ¡ˆï¼Œå½»åº•è§£å†³æ•°æ®åº“è¿ç»´çš„çƒ¦æ¼ã€‚
 
-=== ÈçºÎÒıÈë Spring Cloud AliCloud RDS
+=== å¦‚ä½•å¼•å…¥ Spring Cloud AliCloud RDS
 
-ÎÒÃÇÍÆ¼öÊ¹ÓÃBOMµÄ·½Ê½Ò»´ÎĞÔ½â¾öaliyun-spring-bootµÄ×é¼ş°æ±¾¹ÜÀí£º
+æˆ‘ä»¬æ¨èä½¿ç”¨BOMçš„æ–¹å¼ä¸€æ¬¡æ€§è§£å†³aliyun-spring-bootçš„ç»„ä»¶ç‰ˆæœ¬ç®¡ç†ï¼š
 
 [source,xml]
 ----
@@ -21,7 +21,7 @@
 </dependencyManagement>
 ----
 
-Èç¹ûÒªÔÚÄúµÄÏîÄ¿ÖĞÒıÈë RDS£¬Ê¹ÓÃ group ID Îª `com.alibaba.cloud` ºÍ artifact ID Îª `aliyun-rds-spring-boot-starter` µÄ starter¡£
+å¦‚æœè¦åœ¨æ‚¨çš„é¡¹ç›®ä¸­å¼•å…¥ RDSï¼Œä½¿ç”¨ group ID ä¸º `com.alibaba.cloud` å’Œ artifact ID ä¸º `aliyun-rds-spring-boot-starter` çš„ starterã€‚
 
 [source,xml]
 ----
@@ -31,9 +31,9 @@
 </dependency>
 ----
 
-³ı´ËÖ®Íâ£¬Äú»¹ĞèÒªÔÚÄúµÄ¹¤³ÌÖĞÒıÈëÊı¾İ¿âÇı¶¯ÒÔ¼°Êı¾İ¿âÁ¬½Ó³Ø£¨¿ÉÑ¡£©£¬ÀıÈç£º
+é™¤æ­¤ä¹‹å¤–ï¼Œæ‚¨è¿˜éœ€è¦åœ¨æ‚¨çš„å·¥ç¨‹ä¸­å¼•å…¥æ•°æ®åº“é©±åŠ¨ä»¥åŠæ•°æ®åº“è¿æ¥æ± ï¼ˆå¯é€‰ï¼‰ï¼Œä¾‹å¦‚ï¼š
 
-Mysql Êı¾İ¿âÇı¶¯
+Mysql æ•°æ®åº“é©±åŠ¨
 [source,xml]
 ----
 <dependency>
@@ -43,7 +43,7 @@ Mysql Êı¾İ¿âÇı¶¯
 </dependency>
 ----
 
-Druid Á¬½Ó³Ø£º
+Druid è¿æ¥æ± ï¼š
 [source,xml]
 ----
 <dependency>
@@ -53,35 +53,35 @@ Druid Á¬½Ó³Ø£º
 </dependency>
 ----
 
-=== ÈçºÎÅäÖÃ Spring Cloud AliCloud RDS
+=== å¦‚ä½•é…ç½® Spring Cloud AliCloud RDS
 
-ÅäÖÃ°¢ÀïÔÆÕËºÅÊÚÈ¨ĞÅÏ¢
+é…ç½®é˜¿é‡Œäº‘è´¦å·æˆæƒä¿¡æ¯
 [source,properties]
 ----
 spring.cloud.alicloud.access-key=Your Alibaba Cloud AK
 spring.cloud.alicloud.secret-key=Your Alibaba Cloud SK
 ----
-Èç¹û²»Çå³ş×Ô¼ºµÄAK&SK£¬ÇëÔÚaliyun¹¤×÷Ì¨µÄ https://usercenter.console.aliyun.com/#/manage/ak[°²È«ĞÅÏ¢¹ÜÀí] ÖĞ²é¿´
+å¦‚æœä¸æ¸…æ¥šè‡ªå·±çš„AK&SKï¼Œè¯·åœ¨aliyunå·¥ä½œå°çš„ https://usercenter.console.aliyun.com/#/manage/ak[å®‰å…¨ä¿¡æ¯ç®¡ç†] ä¸­æŸ¥çœ‹
 
 
-ÅäÖÃÊı¾İÔ´, ÕâÀïÒÔmysqlÎªÀı
+é…ç½®æ•°æ®æº, è¿™é‡Œä»¥mysqlä¸ºä¾‹
 [source,properties]
 ----
-# Êı¾İÔ´Ãû³Æ
+# æ•°æ®æºåç§°
 spring.datasource.name=defaultDataSource
-# Êı¾İ¿âÁ¬½ÓµØÖ·£º
+# æ•°æ®åº“è¿æ¥åœ°å€ï¼š
 spring.datasource.url=jdbc:mysql://{host}:{port}/test_db?serverTimezone=UTC
-# Êı¾İ¿âÓÃ»§Ãû&ÃÜÂë£º
+# æ•°æ®åº“ç”¨æˆ·å&å¯†ç ï¼š
 spring.datasource.username=******
 spring.datasource.password=******
-# Êı¾İ¿âÇı¶¯£º
+# æ•°æ®åº“é©±åŠ¨ï¼š
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 ----
-Äú¿ÉÒÔÔÚ°¢ÀïÔÆ¹¤×÷Ì¨µÄ https://rdsnext.console.aliyun.com[Êı¾İ¿â¹ÜÀí] ÖĞ²é¿´×Ô¼ºÊı¾İ¿âµÄÁ´½ÓµØÖ·¡¢ÓÃ»§Ãû&ÃÜÂë
+æ‚¨å¯ä»¥åœ¨é˜¿é‡Œäº‘å·¥ä½œå°çš„ https://rdsnext.console.aliyun.com[æ•°æ®åº“ç®¡ç†] ä¸­æŸ¥çœ‹è‡ªå·±æ•°æ®åº“çš„é“¾æ¥åœ°å€ã€ç”¨æˆ·å&å¯†ç 
 
-NOTE: ÇëÒ»¶¨×¢Òâ£¬±£³Ö£º·şÎñ¶Ë°æ±¾¡¢Çı¶¯°æ±¾¡¢Çı¶¯ÀàÃûµÄÒ»ÖÂ£»mysql5 ºÍ mysql8µÄdriver-class-nameÊÇ²»Ò»ÑùµÄ£¬¶ÔÓ¦mysql8µÄdriver-class-nameÎªcom.mysql.cj.jdbc.Driver¡£
+NOTE: è¯·ä¸€å®šæ³¨æ„ï¼Œä¿æŒï¼šæœåŠ¡ç«¯ç‰ˆæœ¬ã€é©±åŠ¨ç‰ˆæœ¬ã€é©±åŠ¨ç±»åçš„ä¸€è‡´ï¼›mysql5 å’Œ mysql8çš„driver-class-nameæ˜¯ä¸ä¸€æ ·çš„ï¼Œå¯¹åº”mysql8çš„driver-class-nameä¸ºcom.mysql.cj.jdbc.Driverã€‚
 
-ÅäÖÃÊı¾İ¿âÁ¬½Ó³Ø
+é…ç½®æ•°æ®åº“è¿æ¥æ± 
 [source,properties]
 ----
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
@@ -91,7 +91,7 @@ spring.datasource.druid.min-idle=2
 spring.datasource.druid.initial-size=2
 ----
 
-=== ²Î¿¼×ÊÁÏ
-https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/[Spring Boot ÅäÖÃËµÃ÷]
+=== å‚è€ƒèµ„æ–™
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/[Spring Boot é…ç½®è¯´æ˜]
 
-https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE[DruidÁ¬½Ó³ØµäĞÍÅäÖÃÑùÀı]
+https://github.com/alibaba/druid/wiki/DruidDataSource%E9%85%8D%E7%BD%AE[Druidè¿æ¥æ± å…¸å‹é…ç½®æ ·ä¾‹]
