@@ -62,7 +62,7 @@ public class RdsPerformanceEndpoint extends AbstractInvoker {
     private RdsProperties rdsProperties;
 
     @ReadOperation
-    public Map<String, Object> performance() {
+    public Map<String, Object> describeDBWithInstances() {
         Map<String, Object> map = new LinkedHashMap<>();
 
         List<DescribeDBInstancesResponse.DBInstance> instances = getInstances();
@@ -76,7 +76,7 @@ public class RdsPerformanceEndpoint extends AbstractInvoker {
     }
 
     @ReadOperation
-    public Map<String, Object> performance(@Selector String instanceId) {
+    public Map<String, Object> describeDBWithInstance(@Selector String instanceId) {
         DescribeDBInstancesResponse.DBInstance instance = getInstance(instanceId);
         if (instance == null) {
             return null;

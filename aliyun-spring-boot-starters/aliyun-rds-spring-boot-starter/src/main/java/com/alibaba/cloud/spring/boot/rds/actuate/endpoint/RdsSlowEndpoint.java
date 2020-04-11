@@ -44,7 +44,7 @@ public class RdsSlowEndpoint extends AbstractInvoker {
     private static final Long TIME_RANGE = 7L * 24 * 60 * 60 * 1000;
 
     @ReadOperation
-    public Map<String, List<DescribeSlowLogsResponse.SQLSlowLog>> slow() {
+    public Map<String, List<DescribeSlowLogsResponse.SQLSlowLog>> describeSlowLogsWithInstances() {
         List<DescribeDBInstancesResponse.DBInstance> instances = getInstances();
         Map<String, List<DescribeSlowLogsResponse.SQLSlowLog>> map = instances.stream()
                 .collect(Collectors.toMap(
@@ -55,16 +55,16 @@ public class RdsSlowEndpoint extends AbstractInvoker {
     }
 
     @ReadOperation
-    public List<DescribeSlowLogsResponse.SQLSlowLog> slow(@Selector String instanceId) {
+    public List<DescribeSlowLogsResponse.SQLSlowLog> describeSlowLogsWithInstance(@Selector String instanceId) {
         DescribeDBInstancesResponse.DBInstance instance = getInstance(instanceId);
         return slow(instance);
     }
 
     @ReadOperation
-    public List<DescribeSlowLogsResponse.SQLSlowLog> slow(@Selector String instanceId,
+    public List<DescribeSlowLogsResponse.SQLSlowLog> describeSlowLogsWithInstanceAndTimeRange(@Selector String instanceId,
                                                           @Selector String start, @Selector String end) {
         DescribeDBInstancesResponse.DBInstance instance = getInstance(instanceId);
-        return slow(instance, start, end);
+        return describeSlowLogs(instance, start, end);
     }
 
     private List<DescribeSlowLogsResponse.SQLSlowLog> slow(
@@ -75,10 +75,10 @@ public class RdsSlowEndpoint extends AbstractInvoker {
         Date end = new Date();
         Date start = new Date(end.getTime() - TIME_RANGE);
 
-        return slow(instance, format.format(start), format.format(end));
+        return describeSlowLogs(instance, format.format(start), format.format(end));
     }
 
-    private List<DescribeSlowLogsResponse.SQLSlowLog> slow(
+    private List<DescribeSlowLogsResponse.SQLSlowLog> describeSlowLogs(
             DescribeDBInstancesResponse.DBInstance instance, @Selector String start,
             @Selector String end) {
         DescribeSlowLogsRequest request = new DescribeSlowLogsRequest();

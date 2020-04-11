@@ -42,29 +42,29 @@ public class RdsErrorEndpoint extends AbstractInvoker {
 	private static final Long TIME_RANGE = 7L * 24 * 60 * 60 * 1000;
 
 	@ReadOperation
-	public Map<String, List<DescribeErrorLogsResponse.ErrorLog>> error() {
+	public Map<String, List<DescribeErrorLogsResponse.ErrorLog>> describeErrorLogsWithInstances() {
 		List<DescribeDBInstancesResponse.DBInstance> instances = getInstances();
 		Map<String, List<DescribeErrorLogsResponse.ErrorLog>> map = instances.stream()
 				.collect(Collectors.toMap(
 						DescribeDBInstancesResponse.DBInstance::getDBInstanceId,
-						this::error));
+						this::describeErrorLogsWithInstances));
 		return map;
 	}
 
 	@ReadOperation
-	public List<DescribeErrorLogsResponse.ErrorLog> errors(@Selector String instanceId) {
+	public List<DescribeErrorLogsResponse.ErrorLog> describeErrorLogsWithInstance(@Selector String instanceId) {
 		DescribeDBInstancesResponse.DBInstance instance = getInstance(instanceId);
-		return error(instance);
+		return describeErrorLogsWithInstances(instance);
 	}
 
 	@ReadOperation
-	public List<DescribeErrorLogsResponse.ErrorLog> error(@Selector String instanceId,
+	public List<DescribeErrorLogsResponse.ErrorLog> describeErrorLogsWithInstanceAndTimeRange(@Selector String instanceId,
                                                           @Selector String start, @Selector String end) {
 		DescribeDBInstancesResponse.DBInstance instance = getInstance(instanceId);
-		return error(instance, start, end);
+		return describeErrorLogsWithInstanceAndTimeRange(instance, start, end);
 	}
 
-	private List<DescribeErrorLogsResponse.ErrorLog> error(
+	private List<DescribeErrorLogsResponse.ErrorLog> describeErrorLogsWithInstances(
 			DescribeDBInstancesResponse.DBInstance instance) {
 
 		SimpleDateFormat format = new SimpleDateFormat(TIME_PATTEN);
@@ -72,10 +72,10 @@ public class RdsErrorEndpoint extends AbstractInvoker {
 		Date end = new Date();
 		Date start = new Date(end.getTime() - TIME_RANGE);
 
-		return error(instance, format.format(start), format.format(end));
+		return describeErrorLogsWithInstanceAndTimeRange(instance, format.format(start), format.format(end));
 	}
 
-	private List<DescribeErrorLogsResponse.ErrorLog> error(
+	private List<DescribeErrorLogsResponse.ErrorLog> describeErrorLogsWithInstanceAndTimeRange(
 			DescribeDBInstancesResponse.DBInstance instance, String start, String end) {
 		if (instance == null) {
 			return Collections.emptyList();
