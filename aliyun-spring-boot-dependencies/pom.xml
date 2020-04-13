@@ -127,9 +127,16 @@
                 <artifactId>aliyun-oss-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
+
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>aliyun-rds-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-schedulerx-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
