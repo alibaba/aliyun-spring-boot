@@ -19,7 +19,7 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>aliyun-spring-boot-dependencies</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
+            <version>1.0.0</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
