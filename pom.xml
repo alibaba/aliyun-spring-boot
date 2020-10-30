@@ -76,6 +76,18 @@
             <organization>Alibaba</organization>
             <url>https://github.com/theonefx</url>
         </developer>
+        <developer>
+            <name>余苏</name>
+            <id>yusu1210</id>
+            <email>yusu1210(AT)126.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
+            <url>https://github.com/yusu1210</url>
+            <organization>Alibaba</organization>
+            <organizationUrl>http://www.alibaba.com</organizationUrl>
+        </developer>
     </developers>
 
     <modules>

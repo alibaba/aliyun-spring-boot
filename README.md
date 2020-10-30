@@ -71,6 +71,10 @@ If you'd like to use the SNAPSHOT artifacts, please add the following `<reposito
 - **[Alibaba Cloud RDS MySQL](https://www.aliyun.com/product/rds/mysql)**: A fully hosted online database service that supports MySQL 5.5, 5.6, 5.7, and 8.0.
    - Starter - [aliyun-rds-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-rds-spring-boot-starter)
    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-rds-spring-boot-sample)
+   
+- **[Alibaba Cloud Compileflow](https://github.com/alibaba/compileflow)**: Core business process engine of Alibaba Halo platform. Best engine for trade Scenes.
+   - Starter - [aliyun-compileflow-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-compileflow-spring-boot-starter)
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-compileflow-spring-boot-sample)   
 
 
 ## Version

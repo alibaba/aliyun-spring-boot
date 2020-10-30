@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>aliyun-spring-boot-parent</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../aliyun-spring-boot-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>aliyun-compileflow-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Aliyun Spring Boot :: Starters :: Compileflow</name>
+    <description>Spring Boot Starter for Aliyun Compileflow</description>
+
+    <dependencies>
+
+        <!--Spring Boot dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator-autoconfigure</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter</artifactId>-->
+        <!--            <optional>true</optional>-->
+        <!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Compileflow -->
+        <dependency>
+            <groupId>com.alibaba.compileflow</groupId>
+            <artifactId>compileflow</artifactId>
+            <version>1.0.0-RC2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Testing dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
