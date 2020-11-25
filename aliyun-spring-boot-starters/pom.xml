@@ -25,5 +25,6 @@
         <module>aliyun-sms-spring-boot-starter</module>
         <module>aliyun-redis-spring-boot-starter</module>
         <module>aliyun-rds-spring-boot-starter</module>
+        <module>aliyun-compileflow-spring-boot-starter</module>
     </modules>
 </project>
