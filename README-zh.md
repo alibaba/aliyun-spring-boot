@@ -70,6 +70,10 @@
    - Starter - [aliyun-rds-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-rds-spring-boot-starter)
    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-rds-spring-boot-sample)
 
+- **[Alibaba Cloud Function Compute](https://www.aliyun.com/product/fc)**: 函数计算（Function Compute）是一个事件驱动的全托管 Serverless 计算服务，您无需管理服务器等基础设施，只需编写代码并上传，函数计算会为您准备好计算资源，并以弹性、可靠的方式运行您的代码。所有客户，我们都将提供每月100万次函数调用、400,000（CU-秒）函数实例资源的免费 Serverless 算力支持。
+   - Starter - [aliyun-fc-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-fc-spring-boot-starter)
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-fc-spring-boot-sample)   
+
 
 ## Version
 

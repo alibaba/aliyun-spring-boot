@@ -26,5 +26,6 @@
         <module>aliyun-redis-spring-boot-starter</module>
         <module>aliyun-rds-spring-boot-starter</module>
         <module>aliyun-compileflow-spring-boot-starter</module>
+        <module>aliyun-fc-spring-boot-starter</module>
     </modules>
 </project>

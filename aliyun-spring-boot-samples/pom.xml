@@ -33,6 +33,7 @@
         <module>aliyun-redis-spring-boot-sample</module>
         <module>aliyun-rds-spring-boot-sample</module>
         <module>aliyun-compileflow-spring-boot-sample</module>
+        <module>aliyun-fc-spring-boot-sample</module>
     </modules>
 
     <build>
