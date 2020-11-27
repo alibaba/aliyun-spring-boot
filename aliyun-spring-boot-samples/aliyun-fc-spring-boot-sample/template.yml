@@ -1,0 +1,26 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  fcspring:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      InternetAccess: true
+      Description: 'helloworld'
+    fcspring:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: 'com.alibaba.cloud.spring.boot.fc.StreamRequestFCSpringFunctionInvoker::handleRequest'
+        Runtime: java8
+        Timeout: 60
+        CodeUri: 'target/deploy/aliyun-fc-spring-boot-sample-1.0.1-SNAPSHOT-fc.jar'
+        MemorySize: 512
+        EnvironmentVariables:
+          SCF_FUNC_NAME: string2string
+      Events:
+        string:
+          Type: HTTP
+          Properties:
+            AuthType: anonymous
+            Methods:
+              - GET
+              - POST
