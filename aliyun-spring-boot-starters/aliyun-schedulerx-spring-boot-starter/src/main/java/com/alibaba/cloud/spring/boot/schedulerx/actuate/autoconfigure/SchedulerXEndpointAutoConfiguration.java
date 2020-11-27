@@ -18,7 +18,6 @@ package com.alibaba.cloud.spring.boot.schedulerx.actuate.autoconfigure;
 
 import com.alibaba.cloud.spring.boot.context.env.EdasProperties;
 import com.alibaba.cloud.spring.boot.schedulerx.env.SchedulerXProperties;
-import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnEnabledEndpoint;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -34,7 +33,6 @@ public class SchedulerXEndpointAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnEnabledEndpoint
     public SchedulerXEndpoint schedulerXEndpoint(EdasProperties edasProperties,
                                                  SchedulerXProperties schedulerXProperties) {
         return new SchedulerXEndpoint(edasProperties, schedulerXProperties);
