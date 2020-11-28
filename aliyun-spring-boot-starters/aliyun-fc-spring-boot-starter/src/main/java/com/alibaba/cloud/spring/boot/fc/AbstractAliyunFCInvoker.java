@@ -1,8 +1,14 @@
 package com.alibaba.cloud.spring.boot.fc;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.function.context.AbstractSpringFunctionAdapterInitializer;
 import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.util.StreamUtils;
 
 import com.aliyun.fc.runtime.Context;
 import com.aliyun.fc.runtime.Credentials;
@@ -59,8 +65,28 @@ public abstract class AbstractAliyunFCInvoker extends AbstractSpringFunctionAdap
         }
     }
 
+    protected Object doInvokeAsStream(InputStream input, Map<String, Object> headers) throws IOException {
+
+        Class<?> type = getInputType();
+
+        Object param;
+        if (type == Void.class) {
+            param = null;
+        } else if (InputStream.class.isAssignableFrom(type)) {
+            param = input;
+        } else {
+            byte[] body = StreamUtils.copyToByteArray(input);
+            MessageBuilder<byte[]> msg = MessageBuilder.withPayload(body);
+            if (input != null) {
+                msg.copyHeaders(headers);
+            }
+            param = msg.build();
+        }
+
+        return doInvoke(param);
+    }
+
     protected Object doInvoke(Object param) {
-        // TODO convert
 
         Publisher<?> input = param == null ? Mono.just("null") : extract(param);
 

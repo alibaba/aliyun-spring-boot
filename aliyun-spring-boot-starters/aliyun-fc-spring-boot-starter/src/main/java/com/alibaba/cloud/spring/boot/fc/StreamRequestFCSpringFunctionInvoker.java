@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry;
 import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
-import org.springframework.util.StreamUtils;
 
 import com.aliyun.fc.runtime.Context;
 import com.aliyun.fc.runtime.StreamRequestHandler;
@@ -21,18 +18,12 @@ public class StreamRequestFCSpringFunctionInvoker extends AbstractAliyunFCInvoke
     public void handleRequest(InputStream input, OutputStream output, Context context) throws IOException {
         this.initialize(context);
 
-        SimpleFunctionRegistry.FunctionInvocationWrapper wrapper = (SimpleFunctionRegistry.FunctionInvocationWrapper) function();
+        Class<?> paramTtype = getInputType();
 
-        if (wrapper.getTarget() instanceof InputOutputFunction) {
-            doInvoke(new Pair<>(input, output));
+        if (InputOutputPair.class.isAssignableFrom(paramTtype)) {
+            doInvoke(new InputOutputPair(input, output));
         } else {
-            Object param = input;
-            if (!InputStream.class.isAssignableFrom(getInputType())) {
-                byte[] body = StreamUtils.copyToByteArray(input);
-                param = MessageBuilder.withPayload(body).build();
-            }
-
-            Object result = doInvoke(param);
+            Object result = doInvokeAsStream(input, null);
             if (functionReturnsMessage(result)) {
                 Message<?> respMsg = (Message<?>) result;
                 output.write(serializeResult(respMsg.getPayload()));
@@ -41,5 +32,4 @@ public class StreamRequestFCSpringFunctionInvoker extends AbstractAliyunFCInvoke
             }
         }
     }
-
 }

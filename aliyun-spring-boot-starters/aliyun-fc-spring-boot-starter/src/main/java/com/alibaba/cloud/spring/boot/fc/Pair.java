@@ -26,6 +26,7 @@
 package com.alibaba.cloud.spring.boot.fc;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 import javafx.beans.NamedArg;
 
@@ -33,7 +34,7 @@ import javafx.beans.NamedArg;
  * <p>A convenience class to represent name-value pairs.</p>
  * @since JavaFX 2.0
  */
-class Pair<K,V> implements Serializable{
+abstract class Pair<K,V> implements Serializable{
 
    /**
     * Key of this <code>Pair</code>.
@@ -62,7 +63,7 @@ class Pair<K,V> implements Serializable{
     * @param key The key for this pair
     * @param value The value to use for this pair
     */
-   public Pair(@NamedArg("key") K key, @NamedArg("value") V value) {
+   protected Pair(@NamedArg("key") K key, @NamedArg("value") V value) {
        this.key = key;
        this.value = value;
    }
@@ -119,8 +120,8 @@ class Pair<K,V> implements Serializable{
         if (this == o) return true;
         if (o instanceof Pair) {
             Pair pair = (Pair) o;
-            if (key != null ? !key.equals(pair.key) : pair.key != null) return false;
-            if (value != null ? !value.equals(pair.value) : pair.value != null) return false;
+            if (!Objects.equals(key, pair.key)) return false;
+            if (!Objects.equals(value, pair.value)) return false;
             return true;
         }
         return false;

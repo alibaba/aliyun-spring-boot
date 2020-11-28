@@ -15,7 +15,7 @@ Resources:
         CodeUri: 'target/deploy/aliyun-fc-spring-boot-sample-1.0.1-SNAPSHOT-fc.jar'
         MemorySize: 512
         EnvironmentVariables:
-          SCF_FUNC_NAME: string2string
+          SCF_FUNC_NAME: stream
       Events:
         string:
           Type: HTTP

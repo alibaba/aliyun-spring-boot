@@ -16,20 +16,16 @@
 
 package com.alibaba.cloud.spring.boot.fc;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry;
 import org.springframework.messaging.Message;
-import org.springframework.messaging.support.MessageBuilder;
 
 import com.aliyun.fc.runtime.Context;
 import com.aliyun.fc.runtime.HttpRequestHandler;
@@ -40,24 +36,21 @@ import com.aliyun.fc.runtime.HttpRequestHandler;
 public class HttpRequestFCSpringFunctionInvoker extends AbstractAliyunFCInvoker implements HttpRequestHandler {
 
     @Override
-    public void handleRequest(HttpServletRequest request, HttpServletResponse response, Context context)
-            throws IOException, ServletException {
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response, Context context) throws IOException {
         this.initialize(context);
 
-        context.getLogger().info("invoke fc as httpRequest!!!!");
+        Class<?> paramTtype = getInputType();
 
-        SimpleFunctionRegistry.FunctionInvocationWrapper wrapper = (SimpleFunctionRegistry.FunctionInvocationWrapper) function();
-
-        if (wrapper.getTarget() instanceof RequestResponseFunction) {
-            doInvoke(new Pair<>(request, response));
+        if (RequestResponsePair.class.isAssignableFrom(paramTtype)) {
+            doInvoke(new RequestResponsePair(request, response));
+        } else if (InputOutputPair.class.isAssignableFrom(paramTtype)) {
+            doInvoke(new InputOutputPair(request.getInputStream(), response.getOutputStream()));
         } else {
+            ServletInputStream input = request.getInputStream();
 
-            Map<String, Object> map = generateHeader(request);
+            Map<String, Object> headers = generateHeader(request);
 
-            Message<BufferedReader> reqMsg = getInputType() == Void.class ? null
-                    : MessageBuilder.withPayload(new BufferedReader(new InputStreamReader(request.getInputStream()))).copyHeaders(map).build();
-
-            Object result = doInvoke(reqMsg);
+            Object result = doInvokeAsStream(input, headers);
 
             if (functionReturnsMessage(result)) {
                 Message<?> respMsg = (Message<?>) result;
@@ -71,7 +64,6 @@ public class HttpRequestFCSpringFunctionInvoker extends AbstractAliyunFCInvoker 
                 response.getWriter().write(serializeBody(result));
             }
         }
-
     }
 
     private Map<String, Object> generateHeader(HttpServletRequest request) {
