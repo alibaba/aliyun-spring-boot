@@ -15,20 +15,30 @@
  */
 package com.alibaba.cloud.spring.boot.fc;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.function.Consumer;
+import java.util.function.Function;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-public interface InputOutputFunction extends Consumer<InputOutputPair> {
+@SpringBootApplication
+public class TestMain {
 
-    @Override
-    default void accept(InputOutputPair pair) {
-        apply(pair.getKey(), pair.getValue());
+    public static void main(String[] args) {
+        SpringApplication.run(TestMain.class, args);
     }
 
-    void apply(InputStream in, OutputStream out);
+    @Bean
+    public Function<String, String> string2string() {
+        return string -> "receive string:" + string;
+    }
+
+    @Bean
+    public Function<String, User> string2object() {
+        return string -> new User(0L, "receive string:" + string);
+    }
 
 }

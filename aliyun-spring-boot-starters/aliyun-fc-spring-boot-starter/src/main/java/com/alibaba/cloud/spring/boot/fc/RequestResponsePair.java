@@ -15,20 +15,21 @@
  */
 package com.alibaba.cloud.spring.boot.fc;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.function.Consumer;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-public interface InputOutputFunction extends Consumer<InputOutputPair> {
+class RequestResponsePair extends Pair<HttpServletRequest, HttpServletResponse> {
 
-    @Override
-    default void accept(InputOutputPair pair) {
-        apply(pair.getKey(), pair.getValue());
+    /**
+     * Creates a new pair
+     *
+     * @param key   The key for this pair
+     * @param value The value to use for this pair
+     */
+    public RequestResponsePair(HttpServletRequest key, HttpServletResponse value) {
+        super(key, value);
     }
-
-    void apply(InputStream in, OutputStream out);
-
 }

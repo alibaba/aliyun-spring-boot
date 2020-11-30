@@ -15,20 +15,17 @@
  */
 package com.alibaba.cloud.spring.boot.fc;
 
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.function.Consumer;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-public interface InputOutputFunction extends Consumer<InputOutputPair> {
-
-    @Override
-    default void accept(InputOutputPair pair) {
-        apply(pair.getKey(), pair.getValue());
-    }
-
-    void apply(InputStream in, OutputStream out);
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class User {
+    private Long id;
+    private String name;
 }

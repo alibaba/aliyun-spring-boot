@@ -32,3 +32,4 @@ hs_err_pid*
 .settings
 target
 .DS_Store
+/aliyun-spring-boot-samples/aliyun-fc-spring-boot-sample/.fun/

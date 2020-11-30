@@ -17,18 +17,19 @@ package com.alibaba.cloud.spring.boot.fc;
 
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.function.Consumer;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-public interface InputOutputFunction extends Consumer<InputOutputPair> {
+class InputOutputPair extends Pair<InputStream, OutputStream> {
 
-    @Override
-    default void accept(InputOutputPair pair) {
-        apply(pair.getKey(), pair.getValue());
+    /**
+     * Creates a new pair
+     *
+     * @param key   The key for this pair
+     * @param value The value to use for this pair
+     */
+    public InputOutputPair(InputStream key, OutputStream value) {
+        super(key, value);
     }
-
-    void apply(InputStream in, OutputStream out);
-
 }
