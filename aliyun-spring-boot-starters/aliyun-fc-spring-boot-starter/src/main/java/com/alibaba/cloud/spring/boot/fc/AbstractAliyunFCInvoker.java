@@ -9,6 +9,7 @@ import org.springframework.cloud.function.context.AbstractSpringFunctionAdapterI
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.util.StreamUtils;
+import org.springframework.util.StringUtils;
 
 import com.aliyun.fc.runtime.Context;
 import com.aliyun.fc.runtime.Credentials;
@@ -54,8 +55,14 @@ public abstract class AbstractAliyunFCInvoker extends AbstractSpringFunctionAdap
                     EXECUTION_CTX_DELEGATE.target = context;
                 }
             }
+            String functionName = null;
             if (System.getenv().containsKey("SCF_FUNC_NAME")) {
-                String functionName = System.getenv("SCF_FUNC_NAME");
+                functionName = System.getenv("SCF_FUNC_NAME");
+            }
+            if (functionName == null && System.getProperties().containsKey("SCF_FUNC_NAME")) {
+                functionName = System.getProperty("SCF_FUNC_NAME");
+            }
+            if (!StringUtils.isEmpty(functionName)) {
                 System.setProperty("function.name", functionName);
             }
         }
@@ -63,6 +70,13 @@ public abstract class AbstractAliyunFCInvoker extends AbstractSpringFunctionAdap
         if (this.mapper == null) {
             this.mapper = new ObjectMapper();
         }
+    }
+
+    @Override
+    public void close() {
+        EXECUTION_CTX_DELEGATE.target = null;
+        this.mapper = null;
+        super.close();
     }
 
     protected Object doInvokeAsStream(InputStream input, Map<String, Object> headers) throws IOException {
@@ -77,7 +91,7 @@ public abstract class AbstractAliyunFCInvoker extends AbstractSpringFunctionAdap
         } else {
             byte[] body = StreamUtils.copyToByteArray(input);
             MessageBuilder<byte[]> msg = MessageBuilder.withPayload(body);
-            if (input != null) {
+            if (headers != null) {
                 msg.copyHeaders(headers);
             }
             param = msg.build();
