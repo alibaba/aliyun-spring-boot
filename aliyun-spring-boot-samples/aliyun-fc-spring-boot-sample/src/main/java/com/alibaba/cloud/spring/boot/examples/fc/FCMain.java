@@ -79,7 +79,7 @@ public class FCMain {
     }
 
     @Bean
-    public Function<String, String> string2string(Context context) {
+    public Function<String, String> uppercase(Context context) {
         return str -> {
             context.getLogger().info("received msg :" + str + ", requestId = " + context.getRequestId());
             return "convert to Upper Case : " + str.toUpperCase();

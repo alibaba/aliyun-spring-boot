@@ -1,11 +1,11 @@
 ROSTemplateFormatVersion: '2015-09-01'
 Transform: 'Aliyun::Serverless-2018-04-03'
 Resources:
-  fcspring:
+  helloscf:
     Type: 'Aliyun::Serverless::Service'
     Properties:
       InternetAccess: true
-      Description: 'helloworld'
+      Description: 'hello alibaba function compute'
     fcspring:
       Type: 'Aliyun::Serverless::Function'
       Properties:
@@ -15,7 +15,7 @@ Resources:
         CodeUri: 'target/deploy/aliyun-fc-spring-boot-sample-1.0.1-SNAPSHOT-fc.jar'
         MemorySize: 512
         EnvironmentVariables:
-          SCF_FUNC_NAME: stream
+          SCF_FUNC_NAME: uppercase
       Events:
         string:
           Type: HTTP
