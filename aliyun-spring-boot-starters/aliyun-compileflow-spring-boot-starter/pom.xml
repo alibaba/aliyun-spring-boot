@@ -38,6 +38,16 @@
             <optional>true</optional>
         </dependency>
 
+        <!--
+            support javax annotation @PostConstruct/@PostDestroy when build under java 11+
+            more info see https://stackoverflow.com/a/55622713/922688
+        -->
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- Compileflow -->
         <dependency>
             <groupId>com.alibaba.compileflow</groupId>
