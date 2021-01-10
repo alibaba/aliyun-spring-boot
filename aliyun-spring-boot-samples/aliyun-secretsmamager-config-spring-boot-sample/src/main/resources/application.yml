@@ -1,0 +1,6 @@
+server:
+  port: 8090
+
+actuator:
+  username: aliyunadmin
+  secret: aliyun_kms

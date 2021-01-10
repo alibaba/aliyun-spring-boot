@@ -1,0 +1,7 @@
+server:
+  port: 8090
+
+environment: local
+application.id: secrets-config-sample
+
+categories.types: local,pre,prod

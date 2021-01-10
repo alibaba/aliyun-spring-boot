@@ -1,0 +1,3 @@
+aliyun:
+  secretsmanager:
+    enabled: false

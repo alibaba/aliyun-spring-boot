@@ -78,7 +78,11 @@ If you'd like to use the SNAPSHOT artifacts, please add the following `<reposito
    
 - **[Alibaba Cloud Function Compute](https://www.aliyun.com/product/fc)**: Core business process engine of Alibaba Halo platform. Best engine for trade Scenes.
    - Starter - [aliyun-fc-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-fc-spring-boot-starter)
-   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-fc-spring-boot-sample)   
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-fc-spring-boot-sample)  
+
+- **[Alibaba Cloud Secrets Manager Config](https://www.aliyun.com/product/kms)**: An easy and convenient manner that you use secrets properties with Alibaba Cloud Secrets Manager for Spring Boot applications.
+   - Starter - [aliyun-secretsmamager-config-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-secretsmamager-config-spring-boot-starter)
+   - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-secretsmamager-config-spring-boot-sample)    
 
 
 ## Version

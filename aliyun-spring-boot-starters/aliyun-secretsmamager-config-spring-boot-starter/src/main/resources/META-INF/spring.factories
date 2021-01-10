@@ -1,0 +1,2 @@
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+com.alibaba.cloud.spring.boot.secretsmanager.config.autoconfigure.AliyunSecretsManagerBootstrapConfiguration

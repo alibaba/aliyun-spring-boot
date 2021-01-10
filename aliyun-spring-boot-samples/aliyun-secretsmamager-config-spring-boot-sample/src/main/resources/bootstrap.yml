@@ -1,0 +1,6 @@
+aliyun:
+  secretsmanager:
+    regionId: cn-hangzhou
+    secretName: aliyun_ssm_config_sample
+    credentialsType: ecs_ram_role
+    ecsRoleName: aliyunSSMConfig

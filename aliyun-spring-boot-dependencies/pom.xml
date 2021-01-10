@@ -32,6 +32,7 @@
         <aliyun.java.sdk.dysmsapi>1.1.0</aliyun.java.sdk.dysmsapi>
         <aliyun.r-kvstore.version>2.1.5</aliyun.r-kvstore.version>
         <aliyun.sdk.rds.version>2.4.4</aliyun.sdk.rds.version>
+	    <aliyun.sdk.kms.version>2.14.0</aliyun.sdk.kms.version>
         <alicloud-context.version>1.0.5</alicloud-context.version>
     </properties>
 
@@ -132,6 +133,13 @@
                 <version>2.2.2</version>
             </dependency>
 
+	       <!-- Aliyun KMS dependeicies -->
+	       <dependency>
+            	<groupId>com.aliyun</groupId>
+            	<artifactId>aliyun-java-sdk-kms</artifactId>
+            	<version>${aliyun.sdk.kms.version}</version>
+            </dependency>	
+
             <!-- Starters dependencies -->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -178,6 +186,12 @@
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>aliyun-fc-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-secretsmamager-config-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
