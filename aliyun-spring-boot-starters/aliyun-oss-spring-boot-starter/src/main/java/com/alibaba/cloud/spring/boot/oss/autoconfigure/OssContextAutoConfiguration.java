@@ -53,12 +53,12 @@ public class OssContextAutoConfiguration {
         if (ossProperties.getAuthorizationMode() == AliCloudAuthorizationMode.AK_SK) {
             Assert.isTrue(!StringUtils.isEmpty(ossProperties.getEndpoint()),
                     "Oss endpoint can't be empty.");
-            Assert.isTrue(!StringUtils.isEmpty(aliCloudProperties.getAccessKey()),
-                    "${alibaba.cloud.access-key} can't be empty.");
-            Assert.isTrue(!StringUtils.isEmpty(aliCloudProperties.getSecretKey()),
-                    "${alibaba.cloud.secret-key} can't be empty.");
+            Assert.isTrue(!StringUtils.isEmpty(aliCloudProperties.getOssAccessKey()),
+                    "${alibaba.cloud.oss-access-key} or ${alibaba.cloud.access-key} can't be empty.");
+            Assert.isTrue(!StringUtils.isEmpty(aliCloudProperties.getOssSecretKey()),
+                    "${alibaba.cloud.oss-secret-key} or ${alibaba.cloud.secret-key} can't be empty.");
             return new OSSClientBuilder().build(ossProperties.getEndpoint(),
-                    aliCloudProperties.getAccessKey(), aliCloudProperties.getSecretKey(),
+                    aliCloudProperties.getOssAccessKey(), aliCloudProperties.getOssSecretKey(),
                     ossProperties.getConfig());
         } else if (ossProperties.getAuthorizationMode() == AliCloudAuthorizationMode.STS) {
             Assert.isTrue(!StringUtils.isEmpty(ossProperties.getEndpoint()),

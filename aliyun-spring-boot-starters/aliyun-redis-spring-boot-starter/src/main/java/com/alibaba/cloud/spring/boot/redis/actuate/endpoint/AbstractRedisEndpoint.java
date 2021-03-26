@@ -49,11 +49,11 @@ public abstract class AbstractRedisEndpoint {
 	}
 
 	public String getAccessKey() {
-		return getAliCloudProperties().getAccessKey();
+		return getAliCloudProperties().getRedisAccessKey();
 	}
 
 	public String getSecretKey() {
-		return getAliCloudProperties().getSecretKey();
+		return getAliCloudProperties().getRedisSecretKey();
 	}
 
 	protected IAcsClient createIAcsClient(String regionId) {

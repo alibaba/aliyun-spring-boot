@@ -20,12 +20,14 @@ import com.alibaba.cloud.context.edas.AliCloudEdasSdk;
 import com.alibaba.cloud.context.edas.AliCloudEdasSdkFactory;
 import com.alibaba.cloud.spring.boot.context.env.AliCloudProperties;
 import com.alibaba.cloud.spring.boot.context.env.EdasProperties;
+
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 
 /**
  * @author xiaolongzuo
@@ -39,8 +41,27 @@ public class EdasContextAutoConfiguration {
     @ConditionalOnMissingBean
     @ConditionalOnClass(name = "com.aliyuncs.edas.model.v20170801.GetSecureTokenRequest")
     public AliCloudEdasSdk aliCloudEdasSdk(AliCloudProperties aliCloudProperties, EdasProperties edasProperties) {
-        return AliCloudEdasSdkFactory.getDefaultAliCloudEdasSdk(aliCloudProperties,
-                edasProperties.getRegionId());
+        AliCloudEdasSdk aliCloudEdasSdk = null;
+        String accessKey = null;
+        String secretKey = null;
+
+
+        if (!StringUtils.isEmpty(aliCloudProperties.getEdasAccessKey()) && !StringUtils.isEmpty(aliCloudProperties.getEdasSecretKey())) {
+            accessKey = aliCloudProperties.getAccessKey();
+            secretKey = aliCloudProperties.getSecretKey();
+            aliCloudProperties.setAccessKey(aliCloudProperties.getEdasAccessKey());
+            aliCloudProperties.setSecretKey(aliCloudProperties.getSecretKey());
+        }
+
+        aliCloudEdasSdk =AliCloudEdasSdkFactory.getDefaultAliCloudEdasSdk(aliCloudProperties, edasProperties.getRegionId());
+
+        if (!StringUtils.isEmpty(aliCloudProperties.getEdasAccessKey()) && !StringUtils.isEmpty(aliCloudProperties.getEdasSecretKey())) {
+            aliCloudProperties.setAccessKey(accessKey);
+            aliCloudProperties.setSecretKey(secretKey);
+        }
+
+        return aliCloudEdasSdk;
+
     }
 
 }

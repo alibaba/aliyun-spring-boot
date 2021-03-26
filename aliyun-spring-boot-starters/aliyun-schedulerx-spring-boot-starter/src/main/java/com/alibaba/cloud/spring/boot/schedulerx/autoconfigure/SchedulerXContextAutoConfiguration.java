@@ -30,6 +30,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 
 /**
  * @author xiaolongzuo
@@ -47,8 +48,28 @@ public class SchedulerXContextAutoConfiguration {
 											 EdasProperties edasProperties,
 											 SchedulerXProperties scxProperties,
 											 AliCloudEdasSdk aliCloudEdasSdk) {
-        return AliCloudScxInitializer.initialize(aliCloudProperties, edasProperties,
-                scxProperties, aliCloudEdasSdk);
+        SchedulerXClient schedulerXClient = null;
+        String accessKey = null;
+        String secretKey = null;
+
+        //replcea access key and secret key
+        if(!StringUtils.isEmpty(aliCloudProperties.getEdasAccessKey())&&!StringUtils.isEmpty(aliCloudProperties.getEdasSecretKey())) {
+            //need a wrapper to make replace edas ak and sk
+             accessKey = aliCloudProperties.getAccessKey();
+             secretKey = aliCloudProperties.getSecretKey();
+             aliCloudProperties.setAccessKey(aliCloudProperties.getEdasAccessKey());
+             aliCloudProperties.setSecretKey(aliCloudProperties.getEdasSecretKey());
+        }
+            schedulerXClient = AliCloudScxInitializer.initialize(aliCloudProperties, edasProperties, scxProperties, aliCloudEdasSdk);
+
+
+        //reset access key and secret key
+        if(!StringUtils.isEmpty(aliCloudProperties.getEdasAccessKey())&&!StringUtils.isEmpty(aliCloudProperties.getEdasSecretKey())) {
+            aliCloudProperties.setAccessKey(accessKey);
+            aliCloudProperties.setSecretKey(secretKey);
+        }
+
+        return schedulerXClient;
     }
 
 }

@@ -52,8 +52,8 @@ public class RdsEndpointAutoConfiguration {
     @ConditionalOnMissingBean(IAcsClient.class)
     public IAcsClient iAcsClient(AliCloudProperties aliCloudProperties) {
         DefaultProfile profile = DefaultProfile.getProfile(
-                rdsProperties.getDefaultRegionId(), aliCloudProperties.getAccessKey(),
-                aliCloudProperties.getSecretKey());
+                rdsProperties.getDefaultRegionId(), aliCloudProperties.getRdsAccessKey(),
+                aliCloudProperties.getRdsSecretKey());
         IAcsClient client = new DefaultAcsClient(profile);
         return client;
     }
