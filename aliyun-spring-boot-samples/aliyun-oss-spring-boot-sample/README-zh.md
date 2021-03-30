@@ -11,7 +11,7 @@
 ### 接入 OSS
 在启动示例进行演示之前，我们先了解一下如何接入 OSS。
 
-**注意：本节只是为了便于您理解接入方式，本示例代码中已经完成接入工作，您只需修改 accessKey、secretKey、endpoint 即可。**
+**注意：本节只是为了便于您理解接入方式，本示例代码中已经完成接入工作，您只需修改 accessKey、secretKey、endpoint、BUCKET_NAME 即可。**
 
 1. 修改 pom.xml 文件，引入 aliyun-oss-spring-boot-starter。	
 

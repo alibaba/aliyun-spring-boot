@@ -12,7 +12,7 @@ If your applications are Spring Boot applications and you need to use Alibaba Cl
 ### Connect to OSS
 
 Before we start the demo, let's learn how to connect OSS to a Spring Boot application.
-**Note: This section is to show you how to connect to oss. The actual configurations have been completed in the following example, and you only need to specify your accessKey, secretKey and endpoint.**
+**Note: This section is to show you how to connect to oss. The actual configurations have been completed in the following example, and you only need to specify your accessKey, secretKey, BUCKET_NAME and endpoint.**
 
 1. Add dependency aliyun-oss-spring-boot-starter in the pom.xml file in your Spring Boot project.
 
