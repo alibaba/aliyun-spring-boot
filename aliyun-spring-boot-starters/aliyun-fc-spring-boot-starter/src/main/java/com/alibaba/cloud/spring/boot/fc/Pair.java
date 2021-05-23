@@ -19,8 +19,6 @@ package com.alibaba.cloud.spring.boot.fc;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javafx.beans.NamedArg;
-
 abstract class Pair<K,V> implements Serializable{
 
    /**
@@ -50,7 +48,7 @@ abstract class Pair<K,V> implements Serializable{
     * @param key The key for this pair
     * @param value The value to use for this pair
     */
-   protected Pair(@NamedArg("key") K key, @NamedArg("value") V value) {
+   protected Pair( K key, V value) {
        this.key = key;
        this.value = value;
    }

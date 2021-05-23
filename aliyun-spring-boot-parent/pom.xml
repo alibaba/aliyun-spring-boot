@@ -169,6 +169,20 @@
                 <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
             </properties>
         </profile>
+        <profile>
+            <!-- Spring Boot 2.4 -->
+            <id>spring-boot-2.4</id>
+            <properties>
+                <spring-boot.version>2.4.0</spring-boot.version>
+            </properties>
+        </profile>
+        <profile>
+            <!-- Spring Boot 2.5 -->
+            <id>spring-boot-2.5</id>
+            <properties>
+                <spring-boot.version>2.5.0</spring-boot.version>
+            </properties>
+        </profile>
 
     </profiles>
 
