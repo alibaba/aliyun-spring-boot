@@ -58,7 +58,7 @@
    - Starter - [aliyun-sms-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-sms-spring-boot-starter)
    - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-sms-spring-boot-sample)
 
-- **[Alibaba Cloud SchedulerX](https://help.aliyun.com/document_detail/43136.html)**: 阿里中间件团队开发的一款分布式任务调度产品，提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。
+- **[Alibaba Cloud SchedulerX](https://www.aliyun.com/aliware/schedulerx)**: 阿里巴巴开发的一款低延时、高可用、可视化的任务调度产品（定时、任务依赖编排、分布式跑批），支持日志服务、监控大盘、报警监控。。
     - Starter - [aliyun-schedulerx-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-schedulerx-spring-boot-starter)
     - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-schedulerx-spring-boot-sample)
 
