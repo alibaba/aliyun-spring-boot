@@ -60,7 +60,7 @@ If you'd like to use the SNAPSHOT artifacts, please add the following `<reposito
     - Starter - [aliyun-sms-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-sms-spring-boot-starter)
     - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-sms-spring-boot-sample)
 
-- **[Alibaba Cloud SchedulerX](https://www.aliyun.com/product/SchedulerX)**: accurate, highly reliable, and highly available scheduled job scheduling services with response time within seconds.
+- **[Alibaba Cloud SchedulerX](https://www.aliyun.com/aliware/schedulerx)**: Accurate, highly available job scheduling services(cron, one time, job dependency and batch compute) with log services, monitor dashboard and alarm services.
     - Starter - [aliyun-schedulerx-spring-boot-starter](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-starters/aliyun-schedulerx-spring-boot-starter)
     - [Sample](https://github.com/alibaba/aliyun-spring-boot/tree/master/aliyun-spring-boot-samples/aliyun-schedulerx-spring-boot-sample)
 

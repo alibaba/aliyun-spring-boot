@@ -47,20 +47,10 @@
 
         <!-- SchedulerX -->
         <dependency>
-            <groupId>com.alibaba.edas</groupId>
-            <artifactId>schedulerX-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.aliyun</groupId>
-            <artifactId>aliyun-java-sdk-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <optional>true</optional>
-        </dependency>
+			<groupId>com.aliyun.schedulerx</groupId>
+			<artifactId>schedulerx2-spring-boot-starter</artifactId>
+			<version>1.5.0.2</version>
+		</dependency>
 
         <!-- Testing dependencies -->
         <dependency>

@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.alibaba.cloud.spring.boot.schedulerx.autoconfigure.SchedulerXContextAutoConfiguration,\
-com.alibaba.cloud.spring.boot.schedulerx.actuate.autoconfigure.SchedulerXEndpointAutoConfiguration
