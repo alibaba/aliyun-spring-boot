@@ -11,11 +11,11 @@
 
 1. 登录阿里云分布式任务调度[Schedulerx控制台](https://schedulerx2.console.aliyun.com)，点击开通服务
 	
-2. pom增加依赖spring-cloud-starter-alibaba-schedulerx
+2. pom增加依赖aliyun-schedulerx-spring-boot-starter
 ```xml
 <dependency>
     <groupId>com.alibaba.cloud</groupId>
-    <artifactId>spring-cloud-starter-alibaba-schedulerx</artifactId>
+    <artifactId>aliyun-schedulerx-spring-boot-starter</artifactId>
 </dependency>
 ```
 
@@ -96,3 +96,19 @@ public class SimpleJob extends JavaProcessor {
 	}
 }
 ```	  
+
+5. 验证
+启动你的springboot启动类，大概1分钟左右，你的定时任务就可以正常调度起来了。
+登录[SchedulerX控制台](https://schedulerx2.console.aliyun.com)，验证命名空间、应用分组、任务创建成功。
+
+   a）命名空间创建成功
+ ![undefined](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/67910/1648026092304-d348a584-3abd-4ba6-8967-a872c6e91397.png?x-oss-process=image%2Fresize%2Cw_1468)
+   
+   b) 应用创建成功，且有实例注册成功
+ ![undefined](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/67910/1648026157874-28ef6476-270a-4af4-8fe7-87e37dbc1b5d.png?x-oss-process=image%2Fresize%2Cw_1468)
+   
+   c) 任务创建成功
+ ![undefined](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/67910/1648026213124-3a46b493-32cc-45f5-818f-052ca6648148.png?x-oss-process=image%2Fresize%2Cw_1468)
+ 
+   d) 查看历史记录
+ ![undefined](https://intranetproxy.alipay.com/skylark/lark/0/2022/png/67910/1648026255967-a1dae5b1-43d9-4f38-8736-2999333978c8.png?x-oss-process=image%2Fresize%2Cw_1468)
