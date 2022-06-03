@@ -34,6 +34,12 @@
             <artifactId>gson</artifactId>
         </dependency>
 
+        <!-- OpenJFX FXML -->
+        <dependency>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-fxml</artifactId>
+          <version>19-ea+6</version>
+        </dependency>
 
         <!-- Test Dependencies -->
         <dependency>
