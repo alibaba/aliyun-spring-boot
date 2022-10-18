@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
 import java.util.Map;
 import java.util.Map.Entry;

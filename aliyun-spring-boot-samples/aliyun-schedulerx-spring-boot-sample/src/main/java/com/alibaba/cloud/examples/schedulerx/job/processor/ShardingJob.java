@@ -14,23 +14,25 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.stereotype.Component;
+
+import com.alibaba.schedulerx.worker.domain.JobContext;
+import com.alibaba.schedulerx.worker.processor.JavaProcessor;
+import com.alibaba.schedulerx.worker.processor.ProcessResult;
 
 /**
- * SchedulerxApplication.
- *
+ * 分片任务，分布式模型需要选择sharding
  * @author xiaomeng.hxm
  */
-@SpringBootApplication
-@EnableScheduling
-public class SchedulerxApplication {
+@Component
+public class ShardingJob extends JavaProcessor {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SchedulerxApplication.class, args);
-	}
+    @Override
+    public ProcessResult process(JobContext context) throws Exception {
+        System.out.println("分片id=" + context.getShardingId() + ", 分片参数=" + context.getShardingParameter());
+        return new ProcessResult(true);
+    }
+
 }

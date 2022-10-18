@@ -14,36 +14,44 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.annotation;
 
+import com.alibaba.schedulerx.common.domain.ExecuteMode;
+import com.alibaba.schedulerx.worker.processor.SchedulerX;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.alibaba.schedulerx.worker.domain.JobContext;
-import com.alibaba.schedulerx.worker.processor.JavaProcessor;
-import com.alibaba.schedulerx.worker.processor.ProcessResult;
-
 /**
- * 单机任务，所有节点随机选一台执行
+ * Spring scheduled job
  * @author yaohui
- */
+ * @create 2022/10/17 下午2:51
+ **/
 @Component
-public class SleepJob extends JavaProcessor {
+public class SpringJob {
 
-    /*
+    /**
      * log4j2/logback配置schedulerxLogAppender，可以进行日志采集
      */
     private static final Logger logger = LoggerFactory.getLogger("schedulerx");
 
-    @Override
-    public ProcessResult process(JobContext context) throws Exception {
-        System.out.println("this is " + context.getJobName() + ", start to sleep 15s");
-        Thread.sleep(15000);
-        return new ProcessResult(true);
+    /**
+     * An spring scheduled job
+     */
+    @Scheduled(cron = "0/5 * * * * ?")
+    public void simpleJob() {
+        logger.info("hello schedulerx! this's an spring simple job.");
     }
 
-    @Override
-    public void kill(JobContext context) {
+    /**
+     * An spring scheduled job
+     * Can use @SchedulerX annotation set job config when open sync(true)
+     */
+    @Scheduled(cron = "0/5 * * * * ?")
+    @SchedulerX(name = "simpleJobWithAnnotation", model = ExecuteMode.STANDALONE)
+    public void simpleJobWithAnnotation() {
+        logger.info("hello schedulerx! this's an spring simple job with SchedulerX annotation.");
     }
+
 }

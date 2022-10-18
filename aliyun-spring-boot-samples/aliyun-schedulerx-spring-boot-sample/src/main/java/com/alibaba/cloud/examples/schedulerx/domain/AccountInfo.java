@@ -16,10 +16,10 @@
 
 package com.alibaba.cloud.examples.schedulerx.domain;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import com.alibaba.schedulerx.worker.processor.BizSubTask;
-import com.google.common.collect.Maps;
 
 /**
  * AccountInfo.
@@ -44,7 +44,7 @@ public class AccountInfo implements BizSubTask {
 	 */
 	@Override
 	public Map<String, String> labelMap() {
-		Map<String, String> labelMap = Maps.newHashMap();
+		Map<String, String> labelMap = new HashMap<>();
 		labelMap.put("user", name);
 		return labelMap;
 	}

@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.schedulerx.worker.domain.JobContext;
@@ -23,16 +25,25 @@ import com.alibaba.schedulerx.worker.processor.JavaProcessor;
 import com.alibaba.schedulerx.worker.processor.ProcessResult;
 
 /**
- * 分片任务，分布式模型需要选择sharding
- * @author xiaomeng.hxm
+ * 单机任务，所有节点随机选一台执行
+ * @author yaohui
  */
 @Component
-public class ShardingJob extends JavaProcessor {
+public class SleepJob extends JavaProcessor {
+
+    /*
+     * log4j2/logback配置schedulerxLogAppender，可以进行日志采集
+     */
+    private static final Logger logger = LoggerFactory.getLogger("schedulerx");
 
     @Override
     public ProcessResult process(JobContext context) throws Exception {
-        System.out.println("分片id=" + context.getShardingId() + ", 分片参数=" + context.getShardingParameter());
+        System.out.println("this is " + context.getJobName() + ", start to sleep 15s");
+        Thread.sleep(15000);
         return new ProcessResult(true);
     }
 
+    @Override
+    public void kill(JobContext context) {
+    }
 }
