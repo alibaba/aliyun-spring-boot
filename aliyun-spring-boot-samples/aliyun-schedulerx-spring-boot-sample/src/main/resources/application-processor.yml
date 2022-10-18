@@ -2,18 +2,17 @@
 ## Step1. 请先在任务调度控制台创建命名空间和应用分组
 spring:
    schedulerx2:
-      endpoint: acm.aliyun.com   #请填写不同region的endpoint
-      namespace: 433d8b23-xxx-xxx-xxx-90d4d1b9a4af #region内全局唯一，建议使用UUID生成
+      endpoint: acm.aliyun.com                     #请填写不同region的endpoint
+      namespace: 433d8b23-xxx-xxx-xxx-90d4d1b9a4af #region内全局唯一，推荐控制台手动创建，如控制台region下不存在且存在任务配置时会自动创建（建议使用UUID生成）
       namespaceName: 测试环境
       namespaceSource: schedulerx
-      appName: myTest            #应用名称
-      groupId: myTest.group      #应用的id标识，一个命名空间下需要唯一
-      appKey: myTest123@alibaba  #应用的key，不要太简单，注意保管好
-      regionId: public           #请填写不同的regionId
+      appName: myTest            #应用名称，如控制台手动创建应用分组则直接复制过来配置即可
+      groupId: myTest.group      #应用的id标识，一个命名空间下需要唯一，推荐控制台手动创建，如控制台region下不存在且存在任务配置时会自动创建
+      appKey: myTest123@alibaba  #应用的key，不要太简单，注意保管好，如控制台手动创建应用分组则直接复制过来配置即可
+      regionId: public           #请填写不同的regionId，用于自动同步下方的任务信息至指定的region
       aliyunAccessKey: xxxxxxxxx
       aliyunSecretKey: xxxxxxxxx
-      alarmChannel: sms,ding     #报警通道：短信和钉钉
-      jobs: 
+      jobs:
          simpleJob: 
             jobModel: standalone
             className: com.alibaba.cloud.examples.schedulerx.job.processor.SimpleJob
@@ -37,12 +36,5 @@ spring:
             cron: 0 * * * * ?
             jobParameter: 100
             overwrite: true
-      alarmUsers:
-         user1:
-            userName: 张三
-            userPhone: 12345678900
-         user2:
-            userName: 李四
-            ding: https://oapi.dingtalk.com/robot/send?access_token=xxxxx
 logging:
    config: classpath:log4j2.xml
