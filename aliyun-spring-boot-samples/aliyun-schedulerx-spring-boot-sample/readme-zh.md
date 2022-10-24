@@ -11,7 +11,7 @@
 
 1. 登录阿里云分布式任务调度[Schedulerx控制台](https://schedulerx2.console.aliyun.com)，点击开通服务
 
-2. 进入任务调度控制台->应用管理，点击"创建应用"，配置应用分组信息保存
+2. 进入任务调度控制台->应用管理，点击"创建应用"，配置应用分组信息保存（PS:本地开发测试环境仅支持公网region创建分组对接）
 
 3. pom增加依赖aliyun-schedulerx-spring-boot-starter
 ```xml

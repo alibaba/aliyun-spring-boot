@@ -17,7 +17,7 @@
 package com.alibaba.cloud.examples.schedulerx.job.annotation;
 
 import com.alibaba.schedulerx.common.domain.ExecuteMode;
-import com.alibaba.schedulerx.worker.processor.SchedulerX;
+import com.alibaba.schedulerx.scheduling.annotation.SchedulerX;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -48,10 +48,8 @@ public class SpringJob {
      * An spring scheduled job
      * Can use @SchedulerX annotation set job config when open sync(true)
      */
-    @Scheduled(cron = "0/5 * * * * ?")
-    @SchedulerX(name = "simpleJobWithAnnotation", model = ExecuteMode.STANDALONE)
+    @SchedulerX(name = "simpleJobWithAnnotation", cron = "0 0/1 * * * ?", model = ExecuteMode.STANDALONE)
     public void simpleJobWithAnnotation() {
         logger.info("hello schedulerx! this's an spring simple job with SchedulerX annotation.");
     }
-
 }
