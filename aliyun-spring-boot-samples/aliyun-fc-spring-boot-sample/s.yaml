@@ -1,0 +1,44 @@
+edition: 1.0.0
+name: helloscf
+access: default
+vars:
+  region: cn-shanghai
+services:
+  fc-helloscf-fcspring:
+    component: devsapp/fc
+    actions:
+      pre-deploy: 
+        - run: mvn package -DskipTests 
+          path: ./ 
+      pre-local: 
+        - run: mvn package -DskipTests 
+          path: ./ 
+    props:
+      region: ${vars.region}
+      service:
+        name: helloscf
+        description: hello alibaba function compute
+        internetAccess: true
+      function:
+        name: fcspring
+        handler: >-
+          com.alibaba.cloud.spring.boot.fc.StreamRequestFCSpringFunctionInvoker::handleRequest
+        timeout: 60
+        memorySize: 512
+        runtime: java8
+        environmentVariables:
+          SCF_FUNC_NAME: uppercase
+        codeUri: target/deploy/aliyun-fc-spring-boot-sample-1.0.1-SNAPSHOT-fc.jar
+      triggers:
+        - name: string
+          type: http
+          config:
+            authType: anonymous
+            methods:
+              - GET
+              - POST
+      customDomains:
+        - domainName: auto
+          protocol: HTTP
+          routeConfigs:
+            - path: /*
