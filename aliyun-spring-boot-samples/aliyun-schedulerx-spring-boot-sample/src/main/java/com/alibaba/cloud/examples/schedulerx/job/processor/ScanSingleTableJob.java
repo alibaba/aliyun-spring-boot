@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -26,7 +27,6 @@ import com.alibaba.schedulerx.common.domain.Pair;
 import com.alibaba.schedulerx.worker.domain.JobContext;
 import com.alibaba.schedulerx.worker.processor.MapJobProcessor;
 import com.alibaba.schedulerx.worker.processor.ProcessResult;
-import com.google.common.collect.Lists;
 
 /**
 * 通过Map模型扫描一个大表
@@ -46,7 +46,7 @@ public class ScanSingleTableJob extends MapJobProcessor {
             Pair<Long, Long> idPair = queryMinAndMaxId(tableName);
             long minId = idPair.getFirst();
             long maxId = idPair.getSecond();
-            List<PageTask> tasks = Lists.newArrayList();
+            List<PageTask> tasks = new ArrayList<>();
             int step = (int) ((maxId - minId) / PAGE_SIZE); //计算分页数量
             for (long i = minId; i < maxId; i+=PAGE_SIZE) {
                 long startId = i;
@@ -67,13 +67,13 @@ public class ScanSingleTableJob extends MapJobProcessor {
     }
 
     private List<String> getDbList() {
-        List<String> dbList = Lists.newArrayList();
+        List<String> dbList = new ArrayList<>();
         //TODO 返回分库列表
         return dbList;
     }
 
     private List<String> getTableList(String dbName) {
-        List<String> tableList = Lists.newArrayList();
+        List<String> tableList = new ArrayList<>();
         //TODO 返回分表列表
         return tableList;
     }
@@ -84,7 +84,7 @@ public class ScanSingleTableJob extends MapJobProcessor {
     }
 
     private List<Record> queryRecord(String tableName, long startId, long endId) {
-        List<Record> records = Lists.newArrayList();
+        List<Record> records = new ArrayList<>();
         //TODO select * from [tableName] where id>=[startId] and id<[endId]
         return records;
     }

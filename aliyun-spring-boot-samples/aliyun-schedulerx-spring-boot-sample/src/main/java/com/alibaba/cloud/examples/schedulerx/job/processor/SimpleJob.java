@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

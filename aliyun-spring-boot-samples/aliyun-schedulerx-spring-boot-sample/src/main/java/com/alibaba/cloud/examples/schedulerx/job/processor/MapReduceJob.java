@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -24,7 +25,6 @@ import org.springframework.stereotype.Component;
 import com.alibaba.schedulerx.worker.domain.JobContext;
 import com.alibaba.schedulerx.worker.processor.MapReduceJobProcessor;
 import com.alibaba.schedulerx.worker.processor.ProcessResult;
-import com.google.common.collect.Lists;
 
 /**
  * MapReduce任务Demo：分发50条消息，分布式并行处理
@@ -43,7 +43,7 @@ public class MapReduceJob extends MapReduceJobProcessor {
         }
         if (isRootTask(context)) {
             System.out.println("start root task");
-            List<String> msgList = Lists.newArrayList();
+            List<String> msgList = new ArrayList<>();
             for (int i = 0; i <= dispatchNum; i++) {
                 msgList.add("msg_" + i);
             }

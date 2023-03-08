@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.alibaba.cloud.examples.schedulerx.job;
+package com.alibaba.cloud.examples.schedulerx.job.processor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,30 +25,25 @@ import com.alibaba.schedulerx.worker.processor.JavaProcessor;
 import com.alibaba.schedulerx.worker.processor.ProcessResult;
 
 /**
- * 演示如何通过实现kill方法正确停止任务运行
- * @author xiaomeng.hxm
+ * 单机任务，所有节点随机选一台执行
+ * @author yaohui
  */
 @Component
-public class KillJob extends JavaProcessor {
+public class SleepJob extends JavaProcessor {
 
     /*
      * log4j2/logback配置schedulerxLogAppender，可以进行日志采集
      */
     private static final Logger logger = LoggerFactory.getLogger("schedulerx");
-    private volatile boolean killed = false;
 
     @Override
     public ProcessResult process(JobContext context) throws Exception {
-        while (!killed) {
-            System.out.println("do something...");
-            Thread.sleep(3000);
-        }
+        System.out.println("this is " + context.getJobName() + ", start to sleep 15s");
+        Thread.sleep(15000);
         return new ProcessResult(true);
     }
 
     @Override
     public void kill(JobContext context) {
-        System.out.println("start to kill");
-        killed = true;
     }
 }

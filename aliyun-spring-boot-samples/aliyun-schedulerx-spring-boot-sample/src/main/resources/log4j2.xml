@@ -18,6 +18,7 @@
 		</Root>
 		<Logger name="schedulerx" level="info" additivity="false">
 			<AppenderRef ref="schedulerxLog" />
+			<AppenderRef ref="Console" />
 		</Logger>
 	</Loggers>
 </Configuration>

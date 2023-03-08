@@ -19,6 +19,7 @@ package com.alibaba.cloud.examples.schedulerx;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * SchedulerxApplication.
@@ -26,7 +27,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @author xiaomeng.hxm
  */
 @SpringBootApplication
-@ComponentScan(value="com.alibaba.schedulerx.*")
+@EnableScheduling
 public class SchedulerxApplication {
 
 	public static void main(String[] args) {

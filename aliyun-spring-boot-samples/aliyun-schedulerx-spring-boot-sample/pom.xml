@@ -51,6 +51,17 @@
             <artifactId>aliyun-schedulerx-spring-boot-starter</artifactId>
         </dependency>
 
+        <!-- 添加springboot的log4j2依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.26</version>
+        </dependency>
     </dependencies>
 
     <build>
